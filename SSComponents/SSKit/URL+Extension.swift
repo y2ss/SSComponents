@@ -14,7 +14,6 @@ extension URL {
     var params: [String: Any]? {
         set {}
         get {
-            
             if let query = self.query {
                 var dict = [String: Any]()
                 let qc = query.components(separatedBy: "&")
@@ -28,7 +27,6 @@ extension URL {
                 return dict
             }
             return nil
-            
         }
     }
 }

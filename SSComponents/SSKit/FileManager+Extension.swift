@@ -42,6 +42,7 @@ extension FileManager {
         return self.path(for: .cachesDirectory)
     }
     
+    //跳过icloud缓存
     class func skipBackup(for filePath: String) -> Bool {
         var url = URL(fileURLWithPath: filePath)
         do {
@@ -53,6 +54,34 @@ extension FileManager {
             log.debug(error)
             return false
         }
+    }
+    
+    class var freeDiskSpace: Double {
+        do {
+            let attrs = try self.default.attributesOfFileSystem(forPath: self.documentsPath!)
+            return Double(attrs[.systemFreeSize] as! Int64) / Double(0x100000)
+        } catch {
+            log.debug(error)
+        }
+        return 0
+    }
+    
+    
+    func size(of folderPath: String) -> Int? {
+        var folderSize = 0
+        do {
+            let contents = try self.contentsOfDirectory(atPath: folderPath)
+            for file in contents {
+                let fileAttris = try self.attributesOfItem(atPath: folderPath + "/" + file)
+                if let _size = fileAttris[FileAttributeKey.size] as? Int {
+                    folderSize += _size
+                }
+            }
+            return folderSize
+        } catch {
+            log.debug(error)
+        }
+        return nil
     }
 }
 

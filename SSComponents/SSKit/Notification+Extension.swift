@@ -20,7 +20,7 @@ extension NotificationCenter {
      */
     func postOnMainThread(_ name: Notification.Name, object: Any? = nil, userInfo:[AnyHashable: Any]? = nil) {
         let notification = Notification(name: name, object: object, userInfo: userInfo)
-        self .postOnMainThread(notification)
+        self.postOnMainThread(notification)
     }
 }
 

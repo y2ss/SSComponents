@@ -23,6 +23,13 @@
 		29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F7F2192DF8100572E37 /* Notification+Extension.swift */; };
 		29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F812192E4E900572E37 /* URL+Extension.swift */; };
 		29BE0F842192E6F200572E37 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F832192E6F200572E37 /* FileManager+Extension.swift */; };
+		29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F852192F23A00572E37 /* Date+Extension.swift */; };
+		29BE0F882193E39800572E37 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F872193E39800572E37 /* DateFormatter+Extension.swift */; };
+		29BE0F8A2193E95300572E37 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F892193E95300572E37 /* NSObject+Extension.swift */; };
+		29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F8B2194463800572E37 /* Timer+Extension.swift */; };
+		29BE0F8E219537FF00572E37 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */; };
+		29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */; };
+		29BE0F92219576C600572E37 /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */; };
 		CE3D412AE922040429FAFB4C /* Pods_SSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FCDC424E4566A93561D303 /* Pods_SSComponents.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +74,13 @@
 		29BE0F7F2192DF8100572E37 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F812192E4E900572E37 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F832192E6F200572E37 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F852192F23A00572E37 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F872193E39800572E37 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F892193E95300572E37 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F8B2194463800572E37 /* Timer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
 		C51114269F958880393DE0E9 /* Pods-SSComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSComponents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		E1FCDC424E4566A93561D303 /* Pods_SSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A6DACD36A65FB1A3567E1D /* Pods-SSComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSComponents.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +179,13 @@
 				29BE0F7F2192DF8100572E37 /* Notification+Extension.swift */,
 				29BE0F812192E4E900572E37 /* URL+Extension.swift */,
 				29BE0F832192E6F200572E37 /* FileManager+Extension.swift */,
+				29BE0F852192F23A00572E37 /* Date+Extension.swift */,
+				29BE0F872193E39800572E37 /* DateFormatter+Extension.swift */,
+				29BE0F892193E95300572E37 /* NSObject+Extension.swift */,
+				29BE0F8B2194463800572E37 /* Timer+Extension.swift */,
+				29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */,
+				29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */,
+				29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */,
 			);
 			path = SSKit;
 			sourceTree = "<group>";
@@ -361,15 +382,22 @@
 			files = (
 				29BE0F842192E6F200572E37 /* FileManager+Extension.swift in Sources */,
 				2987B5362187DF1200ACCD03 /* UIView+Extension.swift in Sources */,
+				29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */,
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
+				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
 				2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */,
+				29BE0F882193E39800572E37 /* DateFormatter+Extension.swift in Sources */,
 				2987B5442187ED3100ACCD03 /* UIImage+Extension.swift in Sources */,
+				29BE0F8E219537FF00572E37 /* UIScreen+Extension.swift in Sources */,
+				29BE0F92219576C600572E37 /* UIBezierPath+Extension.swift in Sources */,
 				2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */,
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
+				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				2987B53A2187E19500ACCD03 /* String+Extension.swift in Sources */,
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
 				29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */,
+				29BE0F8A2193E95300572E37 /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

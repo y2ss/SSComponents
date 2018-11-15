@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func toImage(_ size: CGSize = .zero) -> UIImage {
+    func toImage(_ size: CGSize = .zero) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size == .zero ? self.bounds.size : size, false, 0.0)
-        let ctx = UIGraphicsGetCurrentContext()!
+        guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
         self.layer.render(in: ctx)
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         UIGraphicsEndImageContext()
         return image
     }
@@ -170,4 +170,41 @@ extension UIView {
             self.layer.shadowOpacity = newValue
         }
     }
+    
+    
+    // MARK: - 自动旋转动画(360°无限转动)
+    func startRotateAnimation(duration: CFTimeInterval = 12) {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z") //让其在z轴旋转
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2.0) //旋转角度
+        rotationAnimation.duration = duration // 转360°所需要的时间
+        rotationAnimation.isCumulative = true // 累加角度
+        rotationAnimation.repeatCount = MAXFLOAT //旋转次数
+        rotationAnimation.isRemovedOnCompletion = false
+        self.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    // MARK: - 暂停动画
+    func pauseRotateAnimation() {
+        //1.取出当前的动画时间点,就是要暂停的时间点
+        let pauseTime = self.layer.convertTime(CACurrentMediaTime(), from: nil)
+        //2.设置动画的时间偏移量，指定时间偏移量的目的是让动画定在时间点
+        self.layer.timeOffset = pauseTime
+        //3.将动画的运行速度设置为0.默认为  1.0
+        self.layer.speed = 0
+    }
+    
+    // MARK: - 继续动画
+    func resumeRotateAnimation() {
+        //1.将动画的时间偏移量作为暂停时间点
+        let pauseTime = self.layer.timeOffset
+        //2.根据媒体时间计算出准确的启动动画时间。对之前暂停动画的时间进行修正。
+        let beginTime = CACurrentMediaTime() - pauseTime
+        //2.5设置偏移时间点清0
+        self.layer.timeOffset = 0
+        //3.设置播放开始时间
+        self.layer.beginTime = beginTime
+        //4.设置速度
+        self.layer.speed = 1.0
+    }
 }
+

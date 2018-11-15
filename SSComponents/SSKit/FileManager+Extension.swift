@@ -42,7 +42,8 @@ extension FileManager {
         return self.path(for: .cachesDirectory)
     }
     
-    //跳过icloud缓存
+    //MARK: - 跳过icloud缓存
+    @discardableResult
     class func skipBackup(for filePath: String) -> Bool {
         var url = URL(fileURLWithPath: filePath)
         do {

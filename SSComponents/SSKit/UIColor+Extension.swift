@@ -68,4 +68,21 @@ extension UIColor {
         self.getHue(&H, saturation: &S, brightness: &B, alpha: &A)
         return [H, S, B, A]
     }
+    
+    //MARK: - 渐变色
+    class func gradient(from color1: UIColor, to color2: UIColor, with size: CGSize) -> UIColor? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        
+        let colorspace = CGColorSpaceCreateDeviceRGB()
+        let colorComponents: NSArray = [color1.cgColor, color2.cgColor]
+        if
+            let ctx = UIGraphicsGetCurrentContext(),
+            let gradient = CGGradient(colorsSpace: colorspace, colors: colorComponents, locations: nil) {
+            ctx.drawLinearGradient(gradient, start: CGPoint.zero, end: CGPoint(x: size.width, y: size.height), options: .init(rawValue: 0))
+            guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+            defer { UIGraphicsEndImageContext() }
+            return UIColor(patternImage: image)
+        }
+        return nil
+    }
 }

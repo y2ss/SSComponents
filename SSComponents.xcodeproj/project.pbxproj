@@ -30,6 +30,13 @@
 		29BE0F8E219537FF00572E37 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */; };
 		29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */; };
 		29BE0F92219576C600572E37 /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */; };
+		29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */; };
+		29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F95219665FD00572E37 /* UIButton+Extension.swift */; };
+		29BE0F9821966E1300572E37 /* BadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9721966E1300572E37 /* BadgeProtocol.swift */; };
+		29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166DD219D4C5200B0CC60 /* UITextField+Extension.swift */; };
+		29E166E0219D5A0B00B0CC60 /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166DF219D5A0B00B0CC60 /* CAGradientLayer.swift */; };
+		29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */; };
+		29E166E6219D742E00B0CC60 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 29E166E5219D742E00B0CC60 /* test.pdf */; };
 		CE3D412AE922040429FAFB4C /* Pods_SSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FCDC424E4566A93561D303 /* Pods_SSComponents.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +88,13 @@
 		29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F95219665FD00572E37 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		29BE0F9721966E1300572E37 /* BadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeProtocol.swift; sourceTree = "<group>"; };
+		29E166DD219D4C5200B0CC60 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		29E166DF219D5A0B00B0CC60 /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
+		29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		29E166E5219D742E00B0CC60 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		C51114269F958880393DE0E9 /* Pods-SSComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSComponents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		E1FCDC424E4566A93561D303 /* Pods_SSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A6DACD36A65FB1A3567E1D /* Pods-SSComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSComponents.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +155,7 @@
 				2987B5342187DEF700ACCD03 /* SSKit */,
 				2987B5062187DEA100ACCD03 /* AppDelegate.swift */,
 				2987B5082187DEA100ACCD03 /* ViewController.swift */,
+				29E166E5219D742E00B0CC60 /* test.pdf */,
 				2987B50A2187DEA100ACCD03 /* Main.storyboard */,
 				2987B50D2187DEA100ACCD03 /* Assets.xcassets */,
 				2987B50F2187DEA100ACCD03 /* LaunchScreen.storyboard */,
@@ -186,6 +201,12 @@
 				29BE0F8D219537FF00572E37 /* UIScreen+Extension.swift */,
 				29BE0F8F21953C2A00572E37 /* UIResponder+Extension.swift */,
 				29BE0F91219576C600572E37 /* UIBezierPath+Extension.swift */,
+				29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */,
+				29BE0F95219665FD00572E37 /* UIButton+Extension.swift */,
+				29BE0F9721966E1300572E37 /* BadgeProtocol.swift */,
+				29E166DD219D4C5200B0CC60 /* UITextField+Extension.swift */,
+				29E166DF219D5A0B00B0CC60 /* CAGradientLayer.swift */,
+				29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */,
 			);
 			path = SSKit;
 			sourceTree = "<group>";
@@ -314,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E166E6219D742E00B0CC60 /* test.pdf in Resources */,
 				2987B5112187DEA100ACCD03 /* LaunchScreen.storyboard in Resources */,
 				2987B50E2187DEA100ACCD03 /* Assets.xcassets in Resources */,
 				2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */,
@@ -381,19 +403,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BE0F842192E6F200572E37 /* FileManager+Extension.swift in Sources */,
+				29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */,
 				2987B5362187DF1200ACCD03 /* UIView+Extension.swift in Sources */,
 				29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */,
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
 				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
 				2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */,
 				29BE0F882193E39800572E37 /* DateFormatter+Extension.swift in Sources */,
+				29BE0F9821966E1300572E37 /* BadgeProtocol.swift in Sources */,
 				2987B5442187ED3100ACCD03 /* UIImage+Extension.swift in Sources */,
 				29BE0F8E219537FF00572E37 /* UIScreen+Extension.swift in Sources */,
 				29BE0F92219576C600572E37 /* UIBezierPath+Extension.swift in Sources */,
+				29E166E0219D5A0B00B0CC60 /* CAGradientLayer.swift in Sources */,
 				2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */,
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
+				29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */,
 				2987B53A2187E19500ACCD03 /* String+Extension.swift in Sources */,
+				29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */,
+				29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */,
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
 				29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */,

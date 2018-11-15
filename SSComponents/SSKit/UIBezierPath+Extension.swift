@@ -11,125 +11,135 @@ import UIKit
 extension UIBezierPath {
     private struct BezierSubPath {
         var startPoint: CGPoint
-        var controlPoint1: CGPoint
-        var controlPoint2: CGPoint
+        var controlPoint1: CGPoint?
+        var controlPoint2: CGPoint?
         var endPoint: CGPoint
         var length: CGFloat
         var type: CGPathElementType
-    }
-    
-    typealias bezierSubPathEnumerator = (CGPathElement)->(Void)
-    
-    
-    /*
-     typedef void(^BezierSubpathEnumerator)(const CGPathElement *element);
-     
-     static void bezierSubpathFunction(void *info, CGPathElement const *element) {
-     BezierSubpathEnumerator block = (__bridge BezierSubpathEnumerator)info;
-     block(element);
-     }
-     
-     @implementation UIBezierPath (JKLength)
-     
-     #pragma mark - Internal
-     
-     - (void)enumerateSubpaths:(BezierSubpathEnumerator)enumeratorBlock
-     {
-     CGPathApply(self.CGPath, (__bridge void *)enumeratorBlock, bezierSubpathFunction);
-     }
-     */
-    
-    
-    private func enumerateSubpaths(_ enumerator: bezierSubPathEnumerator) {
-        self.cgPath.apply(info: nil) { info, element in
-            
+        
+        init(_ type: CGPathElementType = .moveToPoint, startPoint: CGPoint = .zero) {
+            self.startPoint = startPoint
+            self.endPoint = .zero
+            self.length = 0
+            self.type = type
         }
     }
     
-    private func extractSubpaths(_ subpaths: [BezierSubPath]) {
+    //MARK: - public
+    //子段数
+    var countSubpaths: Int {
+        var count = 0
         self.cgPath.applyWithBlock { element in
-            print(element)
+            if element.pointee.type != .moveToPoint {
+                count += 1
+            }
         }
+        return count == 0 ? 1 : count
+    }
 
+    //bezierpath length
+    var length: CGFloat {
+        let count = countSubpaths
+        var subpaths = [BezierSubPath](repeating: BezierSubPath(), count: count)
+        extractSubpaths(&subpaths)
+        var length: CGFloat = 0
+        for i in 0 ..< count {
+            length += subpaths[i].length
+        }
+        return length
     }
     
-    /*
-     - (void)extractSubpaths:(JKBezierSubpath*)subpathArray
-     {
-     __block CGPoint currentPoint = CGPointZero;
-     __block NSUInteger i = 0;
-     [self enumerateSubpaths:^(const CGPathElement *element) {
-     
-     CGPathElementType type = element->type;
-     CGPoint *points = element->points;
-     
-     CGFloat subLength = 0.0f;
-     CGPoint endPoint = CGPointZero;
-     
-     JKBezierSubpath subpath;
-     subpath.type = type;
-     subpath.startPoint = currentPoint;
-     
-     /*
-     *  All paths, no matter how complex, are created through a combination of these path elements.
-     */
-     switch (type) {
-     case kCGPathElementMoveToPoint:
-     
-     endPoint = points[0];
-     
-     break;
-     case kCGPathElementAddLineToPoint:
-     
-     endPoint = points[0];
-     
-     subLength = linearLineLength(currentPoint, endPoint);
-     
-     break;
-     case kCGPathElementAddQuadCurveToPoint:
-     
-     endPoint = points[1];
-     CGPoint controlPoint = points[0];
-     
-     subLength = quadCurveLength(currentPoint, endPoint, controlPoint);
-     
-     subpath.controlPoint1 = controlPoint;
-     
-     break;
-     case kCGPathElementAddCurveToPoint:
-     
-     endPoint = points[2];
-     CGPoint controlPoint1 = points[0];
-     CGPoint controlPoint2 = points[1];
-     
-     subLength = cubicCurveLength(currentPoint, endPoint, controlPoint1, controlPoint2);
-     
-     subpath.controlPoint1 = controlPoint1;
-     subpath.controlPoint2 = controlPoint2;
-     
-     break;
-     case kCGPathElementCloseSubpath:
-     default:
-     break;
-     }
-     
-     subpath.length = subLength;
-     subpath.endPoint = endPoint;
-     
-     if (type != kCGPathElementMoveToPoint) {
-     subpathArray[i] = subpath;
-     i++;
-     }
-     
-     currentPoint = endPoint;
-     }];
-     if (i == 0) {
-     subpathArray[0].length = 0.0f;
-     subpathArray[0].endPoint = currentPoint;
-     }
-     }
-     */
-
+    func pointAtPercentOfLength(_ percent: CGFloat) -> CGPoint {
+        var p = percent
+        if p < 0 {
+            p = 0
+        } else if p > 1 {
+            p = 1
+        }
+        let subpathCount = self.countSubpaths
+        var subpaths = [BezierSubPath](repeating: BezierSubPath(), count: subpathCount)
+        extractSubpaths(&subpaths)
+        var length: CGFloat = 0
+        for i in 0 ..< subpathCount {
+            length += subpaths[i].length
+        }
+        
+        let pointLocationInPath = length * p
+        var currentLength: CGFloat = 0
+        var subpathContainingPoint = BezierSubPath()
+        
+        for i in 0 ..< subpathCount {
+            if currentLength + subpaths[i].length >= pointLocationInPath {
+                subpathContainingPoint = subpaths[i]
+                break
+            } else {
+                currentLength += subpaths[i].length
+            }
+        }
+        
+        let lengthInSubpath = pointLocationInPath - currentLength
+        if subpathContainingPoint.length == 0 {
+            return subpathContainingPoint.endPoint
+        } else {
+            let t = lengthInSubpath / subpathContainingPoint.length
+            return pointAtPercent(t, of: subpathContainingPoint)
+        }
+    }
+    
+    //MARK: - private
+    private func pointAtPercent(_ per: CGFloat, of subpath: BezierSubPath) -> CGPoint {
+        var p = CGPoint.zero
+        switch subpath.type {
+        case .addLineToPoint:
+            p = linearBezierPoint(per, subpath.startPoint, subpath.endPoint)
+        case .addQuadCurveToPoint:
+            p = quadBezierPoint(per, subpath.startPoint, subpath.controlPoint1!, subpath.endPoint)
+        case .addCurveToPoint:
+            p = cubicBezierPoint(per, subpath.startPoint, subpath.controlPoint1!, subpath.controlPoint2!, subpath.endPoint)
+        default:
+            break
+        }
+        return p
+    }
+    
+    private func extractSubpaths(_ subpaths: inout [BezierSubPath]) {
+        var currentPoint = CGPoint.zero
+        var i = 0
+        self.cgPath.applyWithBlock { element in
+            let points = element.pointee.points
+            var subpath = BezierSubPath(element.pointee.type, startPoint: currentPoint)
+            switch subpath.type {
+            case .moveToPoint:
+                subpath.endPoint = points.advanced(by: 0).pointee
+            case .addLineToPoint:
+                subpath.endPoint = points.advanced(by: 0).pointee
+                subpath.length = linearLineLength(currentPoint, subpath.endPoint)
+            case .addQuadCurveToPoint:
+                subpath.endPoint = points.advanced(by: 1).pointee
+                let controlPoint = points.advanced(by: 0).pointee
+                subpath.length = quadCurveLength(currentPoint, subpath.endPoint, controlPoint)
+                subpath.controlPoint1 = controlPoint
+            case .addCurveToPoint:
+                subpath.endPoint = points.advanced(by: 2).pointee
+                let controlPoint1 = points.advanced(by: 0).pointee
+                let controlPoint2 = points.advanced(by: 1).pointee
+                subpath.length = cubicCurveLength(currentPoint, subpath.endPoint, controlPoint1, controlPoint2)
+                subpath.controlPoint1 = controlPoint1
+                subpath.controlPoint2 = controlPoint2
+            case .closeSubpath:
+                break
+            }
+            if subpath.type != .moveToPoint {
+                subpaths[i] = subpath
+                i += 1
+            }
+            currentPoint = subpath.endPoint
+        }
+        if i == 0 {
+            subpaths[0].length = 0
+            subpaths[0].endPoint = currentPoint
+        }
+    }
 }
 
 

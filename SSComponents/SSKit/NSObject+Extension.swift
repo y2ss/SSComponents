@@ -10,6 +10,7 @@ import Foundation
 
 extension NSObject {
     
+    @discardableResult
     func swizzle(with _class: AnyClass, oriSel: Selector, altSel: Selector) -> Bool {
         let _oriSel = oriSel
         let _altSel = altSel

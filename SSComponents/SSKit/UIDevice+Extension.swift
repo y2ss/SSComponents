@@ -10,8 +10,6 @@ import UIKit
 
 extension UIDevice {
     
- 
-    
     func blankof<T>(type: T.Type) -> T {
         let ptr = UnsafeMutablePointer<T>.allocate(capacity: MemoryLayout<T>.size)
         let val = ptr.pointee

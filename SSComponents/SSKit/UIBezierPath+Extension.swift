@@ -29,10 +29,14 @@ extension UIBezierPath {
     //子段数
     var countSubpaths: Int {
         var count = 0
-        self.cgPath.applyWithBlock { element in
-            if element.pointee.type != .moveToPoint {
-                count += 1
+        if #available(iOS 11.0, *) {
+            self.cgPath.applyWithBlock { element in
+                if element.pointee.type != .moveToPoint {
+                    count += 1
+                }
             }
+        } else {
+            fatalError("only support about ios 11")
         }
         return count == 0 ? 1 : count
     }
@@ -105,35 +109,40 @@ extension UIBezierPath {
     private func extractSubpaths(_ subpaths: inout [BezierSubPath]) {
         var currentPoint = CGPoint.zero
         var i = 0
-        self.cgPath.applyWithBlock { element in
-            let points = element.pointee.points
-            var subpath = BezierSubPath(element.pointee.type, startPoint: currentPoint)
-            switch subpath.type {
-            case .moveToPoint:
-                subpath.endPoint = points.advanced(by: 0).pointee
-            case .addLineToPoint:
-                subpath.endPoint = points.advanced(by: 0).pointee
-                subpath.length = linearLineLength(currentPoint, subpath.endPoint)
-            case .addQuadCurveToPoint:
-                subpath.endPoint = points.advanced(by: 1).pointee
-                let controlPoint = points.advanced(by: 0).pointee
-                subpath.length = quadCurveLength(currentPoint, subpath.endPoint, controlPoint)
-                subpath.controlPoint1 = controlPoint
-            case .addCurveToPoint:
-                subpath.endPoint = points.advanced(by: 2).pointee
-                let controlPoint1 = points.advanced(by: 0).pointee
-                let controlPoint2 = points.advanced(by: 1).pointee
-                subpath.length = cubicCurveLength(currentPoint, subpath.endPoint, controlPoint1, controlPoint2)
-                subpath.controlPoint1 = controlPoint1
-                subpath.controlPoint2 = controlPoint2
-            case .closeSubpath:
-                break
+        
+        if #available(iOS 11.0, *) {
+            self.cgPath.applyWithBlock { element in
+                let points = element.pointee.points
+                var subpath = BezierSubPath(element.pointee.type, startPoint: currentPoint)
+                switch subpath.type {
+                case .moveToPoint:
+                    subpath.endPoint = points.advanced(by: 0).pointee
+                case .addLineToPoint:
+                    subpath.endPoint = points.advanced(by: 0).pointee
+                    subpath.length = linearLineLength(currentPoint, subpath.endPoint)
+                case .addQuadCurveToPoint:
+                    subpath.endPoint = points.advanced(by: 1).pointee
+                    let controlPoint = points.advanced(by: 0).pointee
+                    subpath.length = quadCurveLength(currentPoint, subpath.endPoint, controlPoint)
+                    subpath.controlPoint1 = controlPoint
+                case .addCurveToPoint:
+                    subpath.endPoint = points.advanced(by: 2).pointee
+                    let controlPoint1 = points.advanced(by: 0).pointee
+                    let controlPoint2 = points.advanced(by: 1).pointee
+                    subpath.length = cubicCurveLength(currentPoint, subpath.endPoint, controlPoint1, controlPoint2)
+                    subpath.controlPoint1 = controlPoint1
+                    subpath.controlPoint2 = controlPoint2
+                case .closeSubpath:
+                    break
+                }
+                if subpath.type != .moveToPoint {
+                    subpaths[i] = subpath
+                    i += 1
+                }
+                currentPoint = subpath.endPoint
             }
-            if subpath.type != .moveToPoint {
-                subpaths[i] = subpath
-                i += 1
-            }
-            currentPoint = subpath.endPoint
+        } else {
+            fatalError("only support about ios 11")
         }
         if i == 0 {
             subpaths[0].length = 0

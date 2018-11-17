@@ -221,6 +221,32 @@ extension UIImage {
         return image
     }
     
+    //MARK: - 裁剪成正方形
+    func clipToSquare() -> UIImage? {
+        let ctx = CIContext()
+        
+        var _ciImage = self.ciImage
+        if _ciImage == nil {
+            guard let _cgimage = self.cgImage else { return nil }
+            _ciImage = CIImage(cgImage: _cgimage)
+        }
+        guard let __ciImage = _ciImage else { return nil }
+        
+        var newSize: CGSize
+        var y: CGFloat
+        if self.size.width / self.size.height < 1 {
+            newSize = CGSize(width: self.size.width, height: self.size.height)
+            y = abs(self.size.height - newSize.height) / 2
+        } else {
+            newSize = CGSize(width: self.size.height, height: self.size.height)
+            y = abs(self.size.width - newSize.width) / 2
+        }
+        
+        guard let imageRef = ctx.createCGImage(__ciImage, from: CGRect(x: 0, y: y, width: newSize.width, height: newSize.height)) else { return nil }
+        
+        return UIImage(cgImage: imageRef)
+    }
+    
     //MARK: - 缩放
     func scale(to size: CGSize) -> UIImage? {
         if size == self.size {
@@ -265,6 +291,8 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
+    
+   
     
 }
 

@@ -12,7 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     private var tableView: UITableView!
     private let dataSource = [
-        "日历"
+        "Calendar",
+        "ImagePicker"
     ]
     
     override func viewDidLoad() {
@@ -42,6 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         case 0:
             self.navigationController?.pushViewController(CalendarViewController(), animated: true)
             break
+        case 1:
+            self.navigationController?.present(SSImagePickerController(), animated: true, completion: nil)
         default:
             break
         }

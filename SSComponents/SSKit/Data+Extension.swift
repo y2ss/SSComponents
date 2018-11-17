@@ -26,6 +26,5 @@ extension Data {
         return String(format: "%@", self as CVarArg)
     }
     
-
     
 }

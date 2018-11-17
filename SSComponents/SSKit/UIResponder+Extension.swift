@@ -10,7 +10,7 @@ import UIKit
 
 extension UIResponder {
     
-    func responderChainDescription() -> String {
+    var responderChainDescription: String {
         var chains = [Any]()
         chains.append(type(of: self))
         let nextResponder = self

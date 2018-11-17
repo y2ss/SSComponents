@@ -20,12 +20,12 @@ extension UIView {
     }
     
     // MARK: - 任意视图切成圆
-    func clipAcircleView() {
+    func clipCircleByLayer() {
         self.layer.cornerRadius = self.bounds.width / 2
         self.clipsToBounds = true
     }
     
-    func clipCircle() -> UIImage? {
+    func clipCircleByCtx() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)

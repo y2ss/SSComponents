@@ -43,6 +43,17 @@ extension UIButton {
         }
         return super.point(inside: point, with: event)
     }
+    
+    //MARK: - 防止重复点击
+    func unclickable(for seconds: TimeInterval) {
+        self.isUserInteractionEnabled = false
+        
+        let delayTime = DispatchTime.now() + Double(seconds * Double(NSEC_PER_MSEC)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+            () -> Void in
+            self.isUserInteractionEnabled = true
+        })
+    }
 }
 
 

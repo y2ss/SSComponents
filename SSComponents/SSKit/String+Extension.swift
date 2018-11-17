@@ -42,6 +42,41 @@ extension String {
         return result
     }
     
+    func hexStringToData() -> Data? {
+        guard let bytes = self.toBytes() else { return nil }
+        return Data(bytes: bytes)
+    }
+    
+    //16进制字符串转化为 [UInt8]
+    func toBytes() -> [UInt8]? {
+        if self.count % 2 != 0 { return nil }
+        var bytes = [UInt8]()
+        var sum = 0
+        let intRange = 48 ... 57
+        let lowercaseRange = 97 ... 102
+        let uppercaseRange = 65 ... 70
+        for (index,c ) in self.utf8CString.enumerated() {
+            var intC = Int(c.byteSwapped)
+            if intC == 0 {
+                break
+            } else if intRange.contains(intC) {
+                intC -= 48
+            } else if lowercaseRange.contains(intC) {
+                intC -= 87
+            } else if uppercaseRange.contains(intC) {
+                intC -= 55
+            } else {
+                return nil
+            }
+            sum = sum * 16 + intC
+            if index % 2 != 0 {
+                bytes.append(UInt8(sum))
+                sum = 0
+            }
+        }
+        return bytes
+    }
+    
     func sha11() -> String {
         guard let data = self.data(using: String.Encoding.utf8) else {
             log.error("字符串初始失敗")

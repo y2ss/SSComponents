@@ -55,17 +55,8 @@ extension Date {
     
     //该月有多少天
     var daysInMonth: Int? {
-        if let month = self.month {
-            switch month {
-            case 1, 3, 5, 7, 8, 10, 12:
-                return 31
-            case 2:
-                return self.isLeapYear ? 29 : 28
-            default:
-                return 30
-            }
-        }
-        return nil
+        let totalDays = Calendar.current.range(of: .day, in: .month, for: self)?.count
+        return totalDays
     }
     
     //day天后的date @param day 可为负数
@@ -120,6 +111,56 @@ extension Date {
         return nil
     }
     
+    
+    var previousMonthDate: Date? {
+        let calendar = Calendar.current
+        var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        components.day = 15// 定位到当月中间日子
+        if let _ = components.month, let _ = components.month {
+            if components.month == 1 {
+                components.month = 12
+                components.year = components.year! - 1
+            } else {
+                components.month = components.month! - 1
+            }
+            let previousDate = calendar.date(from: components)
+            return previousDate
+        }
+        return nil
+    }
+    
+    var nextMonthDate: Date? {
+        let calendar = Calendar.current
+        var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        components.day = 15
+        if let _ = components.month, let _ = components.year {
+            if components.month == 12 {
+                components.month = 1
+                components.year = 1 + components.year!
+            } else {
+                components.month = 1 + components.month!
+            }
+            let nextDate = calendar.date(from: components)
+            return nextDate
+        }
+        return nil
+    }
+    
+    //本月第一周有几天
+    var firstWeekDayInMonth: Int? {
+        let calendar = Calendar.current
+        var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        components.day = 1// 定位到当月第一天
+        if
+            let firstDay = calendar.date(from: components),
+            let weekday = calendar.ordinality(of: .day, in: .weekOfMonth, for: firstDay) {
+            // 默认一周第一天序号为 1 ，而日历中约定为 0 ，故需要减一
+            //获取该时间of在in中的位置
+            let firstWeekDay = weekday - 1
+            return firstWeekDay
+        }
+        return nil
+    }
     
     func isSameDay(_ anotherDate: Date) -> Bool {
         let comps1 = Calendar.current.dateComponents([.year, .month, .day], from: self)

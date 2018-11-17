@@ -10,9 +10,22 @@ import Foundation
 
 extension Data {
     
-    public var bytes: Array<UInt8> {
+    var bytes: Array<UInt8> {
         return Array(self)
     }
     
+    var utf8: String? {
+        if self.count > 0 {
+            guard let _utf8 = String(data: self, encoding: .utf8) else { return nil }
+            return _utf8
+        }
+        return nil
+    }
+    
+    var hex: String {
+        return String(format: "%@", self as CVarArg)
+    }
+    
+
     
 }

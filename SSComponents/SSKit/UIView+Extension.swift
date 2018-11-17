@@ -24,6 +24,18 @@ extension UIView {
         self.layer.cornerRadius = self.bounds.width / 2
         self.clipsToBounds = true
     }
+    
+    func clipCircle() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        ctx.addEllipse(in: rect)
+        ctx.clip()
+        self.draw(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
 

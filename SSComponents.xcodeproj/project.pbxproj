@@ -14,6 +14,16 @@
 		295F212A219FC087006391D1 /* SSPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2129219FC087006391D1 /* SSPhotoAlbum.swift */; };
 		295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F212B219FC94D006391D1 /* SSPhotoCell.swift */; };
 		295F2131219FEFFA006391D1 /* SSImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2130219FEFFA006391D1 /* SSImagePickerController.swift */; };
+		295F213421A0115A006391D1 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F213321A0115A006391D1 /* Scheduler.swift */; };
+		295F213E21A01F3E006391D1 /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F213B21A01F3E006391D1 /* SwipeableView.swift */; };
+		295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F213D21A01F3E006391D1 /* SwipeableViewManager.swift */; };
+		295F215921A23D4B006391D1 /* SwipeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F215821A23D4B006391D1 /* SwipeCardViewController.swift */; };
+		295F215B21A23EBC006391D1 /* SC1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F215A21A23EBC006391D1 /* SC1ViewController.swift */; };
+		295F215D21A23F02006391D1 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F215C21A23F02006391D1 /* SwipeCardView.swift */; };
+		295F215F21A25307006391D1 /* SC2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F215E21A25307006391D1 /* SC2ViewController.swift */; };
+		295F216121A2547A006391D1 /* SC3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F216021A2547A006391D1 /* SC3ViewController.swift */; };
+		295F216A21A2616E006391D1 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216621A2616E006391D1 /* PRTween.m */; };
+		295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
 		2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2987B50A2187DEA100ACCD03 /* Main.storyboard */; };
@@ -77,6 +87,18 @@
 		295F2129219FC087006391D1 /* SSPhotoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPhotoAlbum.swift; sourceTree = "<group>"; };
 		295F212B219FC94D006391D1 /* SSPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPhotoCell.swift; sourceTree = "<group>"; };
 		295F2130219FEFFA006391D1 /* SSImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSImagePickerController.swift; sourceTree = "<group>"; };
+		295F213321A0115A006391D1 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		295F213B21A01F3E006391D1 /* SwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
+		295F213D21A01F3E006391D1 /* SwipeableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableViewManager.swift; sourceTree = "<group>"; };
+		295F215821A23D4B006391D1 /* SwipeCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardViewController.swift; sourceTree = "<group>"; };
+		295F215A21A23EBC006391D1 /* SC1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SC1ViewController.swift; sourceTree = "<group>"; };
+		295F215C21A23F02006391D1 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
+		295F215E21A25307006391D1 /* SC2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SC2ViewController.swift; sourceTree = "<group>"; };
+		295F216021A2547A006391D1 /* SC3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SC3ViewController.swift; sourceTree = "<group>"; };
+		295F216621A2616E006391D1 /* PRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTween.m; sourceTree = "<group>"; };
+		295F216721A2616E006391D1 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
+		295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
+		295F216921A2616E006391D1 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTween.h; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2987B5082187DEA100ACCD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +175,8 @@
 		295F211F219FB08D006391D1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				295F216221A25BE0006391D1 /* DragBadgeView */,
+				295F213221A01097006391D1 /* SwipeCard */,
 				295F2124219FBCAF006391D1 /* ImagePickerController */,
 				295F2120219FB09A006391D1 /* Calendar */,
 			);
@@ -186,6 +210,55 @@
 				295F2130219FEFFA006391D1 /* SSImagePickerController.swift */,
 			);
 			path = SSImagePickerContoller;
+			sourceTree = "<group>";
+		};
+		295F213221A01097006391D1 /* SwipeCard */ = {
+			isa = PBXGroup;
+			children = (
+				295F215421A01FEF006391D1 /* SwipeCard */,
+				295F215821A23D4B006391D1 /* SwipeCardViewController.swift */,
+				295F215A21A23EBC006391D1 /* SC1ViewController.swift */,
+				295F215E21A25307006391D1 /* SC2ViewController.swift */,
+				295F216021A2547A006391D1 /* SC3ViewController.swift */,
+			);
+			path = SwipeCard;
+			sourceTree = "<group>";
+		};
+		295F215421A01FEF006391D1 /* SwipeCard */ = {
+			isa = PBXGroup;
+			children = (
+				295F213D21A01F3E006391D1 /* SwipeableViewManager.swift */,
+				295F213B21A01F3E006391D1 /* SwipeableView.swift */,
+				295F215C21A23F02006391D1 /* SwipeCardView.swift */,
+			);
+			path = SwipeCard;
+			sourceTree = "<group>";
+		};
+		295F216221A25BE0006391D1 /* DragBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				295F216321A25C07006391D1 /* DragBadgeView */,
+			);
+			path = DragBadgeView;
+			sourceTree = "<group>";
+		};
+		295F216321A25C07006391D1 /* DragBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				295F216C21A264BF006391D1 /* Helper */,
+			);
+			path = DragBadgeView;
+			sourceTree = "<group>";
+		};
+		295F216C21A264BF006391D1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				295F216921A2616E006391D1 /* PRTween.h */,
+				295F216621A2616E006391D1 /* PRTween.m */,
+				295F216721A2616E006391D1 /* PRTweenTimingFunctions.h */,
+				295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		2987B4FA2187DEA100ACCD03 = {
@@ -272,6 +345,7 @@
 				29E166E7219E47DF00B0CC60 /* Array+Extension.swift */,
 				29E166E9219E5CEE00B0CC60 /* UITableView+Extension.swift */,
 				29E166ED219E6B6300B0CC60 /* BitManager.swift */,
+				295F213321A0115A006391D1 /* Scheduler.swift */,
 			);
 			path = SSKit;
 			sourceTree = "<group>";
@@ -483,6 +557,8 @@
 				2987B5362187DF1200ACCD03 /* UIView+Extension.swift in Sources */,
 				29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */,
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
+				295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */,
+				295F215B21A23EBC006391D1 /* SC1ViewController.swift in Sources */,
 				295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */,
 				295F2131219FEFFA006391D1 /* SSImagePickerController.swift in Sources */,
 				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
@@ -497,17 +573,25 @@
 				29E166E0219D5A0B00B0CC60 /* CAGradientLayer+Extension.swift in Sources */,
 				295F212A219FC087006391D1 /* SSPhotoAlbum.swift in Sources */,
 				295F2123219FB0C5006391D1 /* CalendarViewController.swift in Sources */,
+				295F215F21A25307006391D1 /* SC2ViewController.swift in Sources */,
 				2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */,
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
 				29E166F5219EB1A500B0CC60 /* SSCalendarScrollView.swift in Sources */,
 				295F2128219FBE1F006391D1 /* SSPhotoAlbumCache.swift in Sources */,
+				295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */,
 				29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */,
 				29E166EE219E6B6300B0CC60 /* BitManager.swift in Sources */,
+				295F213E21A01F3E006391D1 /* SwipeableView.swift in Sources */,
 				2987B53A2187E19500ACCD03 /* String+Extension.swift in Sources */,
+				295F216A21A2616E006391D1 /* PRTween.m in Sources */,
+				295F215D21A23F02006391D1 /* SwipeCardView.swift in Sources */,
+				295F216121A2547A006391D1 /* SC3ViewController.swift in Sources */,
+				295F213421A0115A006391D1 /* Scheduler.swift in Sources */,
 				29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */,
 				29E166F1219EA95F00B0CC60 /* SSCalendarModel.swift in Sources */,
+				295F215921A23D4B006391D1 /* SwipeCardViewController.swift in Sources */,
 				29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */,
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
@@ -694,7 +778,7 @@
 				DEVELOPMENT_TEAM = DJYBGN25Y2;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = SSComponents/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,7 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DJYBGN25Y2;
 				INFOPLIST_FILE = SSComponents/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

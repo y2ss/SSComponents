@@ -1,4 +1,6 @@
 Pods/
 Podfile.lock
 .DS_store
-
+UserInterfaceState.xcuserstate
+xcdebugger
+xcdebugger/

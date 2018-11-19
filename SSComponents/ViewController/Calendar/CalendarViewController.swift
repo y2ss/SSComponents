@@ -20,6 +20,8 @@ class CalendarViewController: UIViewController, SSCalendarViewDelegate {
         let calendar = SSCalendarView(CGPoint(x: 0, y: 64 + 80), width: self.view.width)
         calendar.delegate = self
         self.view.addSubview(calendar)
+        
     }
+    
 
 }

@@ -4,3 +4,4 @@
 
 #import <CommonCrypto/CommonDigest.h>
 #import "PRTween.h"
+#import "PRTweenTimingFunctions.h"

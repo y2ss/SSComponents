@@ -24,6 +24,7 @@
 		295F216121A2547A006391D1 /* SC3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F216021A2547A006391D1 /* SC3ViewController.swift */; };
 		295F216A21A2616E006391D1 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216621A2616E006391D1 /* PRTween.m */; };
 		295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */; };
+		295F216E21A265E6006391D1 /* SSDragBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F216D21A265E6006391D1 /* SSDragBadgeView.swift */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
 		2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2987B50A2187DEA100ACCD03 /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 		295F216721A2616E006391D1 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
 		295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		295F216921A2616E006391D1 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTween.h; sourceTree = "<group>"; };
+		295F216D21A265E6006391D1 /* SSDragBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDragBadgeView.swift; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2987B5082187DEA100ACCD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				295F216C21A264BF006391D1 /* Helper */,
+				295F216D21A265E6006391D1 /* SSDragBadgeView.swift */,
 			);
 			path = DragBadgeView;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			files = (
 				29BE0F842192E6F200572E37 /* FileManager+Extension.swift in Sources */,
 				295F2126219FBCF5006391D1 /* SSPhotoAlbumModel.swift in Sources */,
+				295F216E21A265E6006391D1 /* SSDragBadgeView.swift in Sources */,
 				29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */,
 				2987B5362187DF1200ACCD03 /* UIView+Extension.swift in Sources */,
 				29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */,

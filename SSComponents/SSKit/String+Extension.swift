@@ -127,7 +127,6 @@ extension String {
                           attributes: attrs,
                           context: nil)
             .size
-        
         return textSize.width
     }
     

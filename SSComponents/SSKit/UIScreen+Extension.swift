@@ -41,3 +41,41 @@ extension UIScreen {
     }
 
 }
+
+extension CGRect {
+    var x: CGFloat {
+        set {
+            origin.x = newValue
+        }
+        get {
+            return origin.x
+        }
+    }
+    
+    var y: CGFloat {
+        set {
+            origin.y = newValue
+        }
+        get {
+            return origin.y
+        }
+    }
+    
+    var width: CGFloat {
+        set {
+            size.width = newValue
+        }
+        get {
+            return size.width
+        }
+    }
+    
+    var height: CGFloat {
+        set {
+            size.height = newValue
+        }
+        get {
+            return size.height
+        }
+    }
+}

@@ -1,27 +1,30 @@
 //
-//  ViewController.swift
+//  TransitionViewController.swift
 //  SSComponents
 //
-//  Created by y2ss on 2018/10/30.
+//  Created by y2ss on 2018/11/23.
 //  Copyright © 2018年 y2ss. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    private var tableView: UITableView!
-    private let dataSource = [
-        "Calendar",
-        "SwipeCard",
-        "DragBadge",
-        "Transition",
-        "Button",
-        "ImagePicker",
-    ]
+class TransitionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private var swipe: SSSloppySwiper!
+    private var tableView: UITableView!
+    private var nav: UINavigationController!
+    private let dataSource = [
+        "SloppySwipe",
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let vc = SloppySwipeVC1()
+        let nav = UINavigationController.init(rootViewController: vc)
+        swipe = SSSloppySwiper.init(navigationController: nav)
+        nav.delegate = swipe
+        self.nav = nav
+        
         tableView = UITableView()
         tableView.frame = self.view.bounds
         tableView.delegate = self
@@ -43,27 +46,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.navigationController?.pushViewController(CalendarViewController(), animated: true)
-            break
-        case 1:
-            self.navigationController?.pushViewController(SwipeCardViewController(), animated: true)
-            break
-        case 2:
-            self.navigationController?.pushViewController(DragBadgeViewController(), animated: true)
-            break
-        case 3:
-            self.navigationController?.present(TransitionViewController(), animated: true, completion: nil)
-            break
-        case 4:
-            self.navigationController?.pushViewController(ButtonViewController(), animated: true)
-            break
-        case 5:
-            self.navigationController?.present(SSImagePickerController(), animated: true, completion: nil)
+            self.present(nav, animated: true, completion: nil)
             break
         default:
             break
         }
     }
+
 }
-
-

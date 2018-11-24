@@ -25,6 +25,15 @@
 		295F216A21A2616E006391D1 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216621A2616E006391D1 /* PRTween.m */; };
 		295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */; };
 		295F216E21A265E6006391D1 /* SSDragBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F216D21A265E6006391D1 /* SSDragBadgeView.swift */; };
+		295F217021A2AE25006391D1 /* DragBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F216F21A2AE25006391D1 /* DragBadgeViewController.swift */; };
+		295F217C21A6B180006391D1 /* SSSwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F217B21A6B180006391D1 /* SSSwipeAnimator.swift */; };
+		295F217E21A7A1CE006391D1 /* SSSloppySwiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F217D21A7A1CE006391D1 /* SSSloppySwiper.swift */; };
+		295F218121A7CBE9006391D1 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218021A7CBE9006391D1 /* TransitionViewController.swift */; };
+		295F218321A7CCE2006391D1 /* SloppySwipeVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218221A7CCE2006391D1 /* SloppySwipeVC1.swift */; };
+		295F218521A7CCF9006391D1 /* SloppySwipeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218421A7CCF9006391D1 /* SloppySwipeVC2.swift */; };
+		295F218821A7FFE4006391D1 /* SSPopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218721A7FFE4006391D1 /* SSPopButton.swift */; };
+		295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */; };
+		295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218D21A92F05006391D1 /* ButtonViewController.swift */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
 		2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2987B50A2187DEA100ACCD03 /* Main.storyboard */; };
@@ -101,6 +110,15 @@
 		295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		295F216921A2616E006391D1 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTween.h; sourceTree = "<group>"; };
 		295F216D21A265E6006391D1 /* SSDragBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDragBadgeView.swift; sourceTree = "<group>"; };
+		295F216F21A2AE25006391D1 /* DragBadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragBadgeViewController.swift; sourceTree = "<group>"; };
+		295F217B21A6B180006391D1 /* SSSwipeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSwipeAnimator.swift; sourceTree = "<group>"; };
+		295F217D21A7A1CE006391D1 /* SSSloppySwiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSloppySwiper.swift; sourceTree = "<group>"; };
+		295F218021A7CBE9006391D1 /* TransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		295F218221A7CCE2006391D1 /* SloppySwipeVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SloppySwipeVC1.swift; sourceTree = "<group>"; };
+		295F218421A7CCF9006391D1 /* SloppySwipeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SloppySwipeVC2.swift; sourceTree = "<group>"; };
+		295F218721A7FFE4006391D1 /* SSPopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPopButton.swift; sourceTree = "<group>"; };
+		295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopButtonViewController.swift; sourceTree = "<group>"; };
+		295F218D21A92F05006391D1 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2987B5082187DEA100ACCD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +195,8 @@
 		295F211F219FB08D006391D1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				295F218C21A92EF2006391D1 /* Button */,
+				295F217F21A7CBD2006391D1 /* Transition */,
 				295F216221A25BE0006391D1 /* DragBadgeView */,
 				295F213221A01097006391D1 /* SwipeCard */,
 				295F2124219FBCAF006391D1 /* ImagePickerController */,
@@ -240,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				295F216321A25C07006391D1 /* DragBadgeView */,
+				295F216F21A2AE25006391D1 /* DragBadgeViewController.swift */,
 			);
 			path = DragBadgeView;
 			sourceTree = "<group>";
@@ -262,6 +283,52 @@
 				295F216821A2616E006391D1 /* PRTweenTimingFunctions.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		295F217A21A6AF95006391D1 /* SloppySwipe */ = {
+			isa = PBXGroup;
+			children = (
+				295F217B21A6B180006391D1 /* SSSwipeAnimator.swift */,
+				295F217D21A7A1CE006391D1 /* SSSloppySwiper.swift */,
+			);
+			path = SloppySwipe;
+			sourceTree = "<group>";
+		};
+		295F217F21A7CBD2006391D1 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				295F217A21A6AF95006391D1 /* SloppySwipe */,
+				295F218021A7CBE9006391D1 /* TransitionViewController.swift */,
+				295F218221A7CCE2006391D1 /* SloppySwipeVC1.swift */,
+				295F218421A7CCF9006391D1 /* SloppySwipeVC2.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		295F218621A7FFC2006391D1 /* PopButton */ = {
+			isa = PBXGroup;
+			children = (
+				295F218921A8E793006391D1 /* PopButton */,
+				295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */,
+			);
+			path = PopButton;
+			sourceTree = "<group>";
+		};
+		295F218921A8E793006391D1 /* PopButton */ = {
+			isa = PBXGroup;
+			children = (
+				295F218721A7FFE4006391D1 /* SSPopButton.swift */,
+			);
+			path = PopButton;
+			sourceTree = "<group>";
+		};
+		295F218C21A92EF2006391D1 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				295F218621A7FFC2006391D1 /* PopButton */,
+				295F218D21A92F05006391D1 /* ButtonViewController.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		2987B4FA2187DEA100ACCD03 = {
@@ -519,10 +586,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -555,6 +624,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BE0F842192E6F200572E37 /* FileManager+Extension.swift in Sources */,
+				295F218821A7FFE4006391D1 /* SSPopButton.swift in Sources */,
+				295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */,
 				295F2126219FBCF5006391D1 /* SSPhotoAlbumModel.swift in Sources */,
 				295F216E21A265E6006391D1 /* SSDragBadgeView.swift in Sources */,
 				29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */,
@@ -563,6 +634,7 @@
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
 				295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */,
 				295F215B21A23EBC006391D1 /* SC1ViewController.swift in Sources */,
+				295F217C21A6B180006391D1 /* SSSwipeAnimator.swift in Sources */,
 				295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */,
 				295F2131219FEFFA006391D1 /* SSImagePickerController.swift in Sources */,
 				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
@@ -581,15 +653,20 @@
 				2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */,
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
 				29E166F5219EB1A500B0CC60 /* SSCalendarScrollView.swift in Sources */,
+				295F217E21A7A1CE006391D1 /* SSSloppySwiper.swift in Sources */,
 				295F2128219FBE1F006391D1 /* SSPhotoAlbumCache.swift in Sources */,
+				295F217021A2AE25006391D1 /* DragBadgeViewController.swift in Sources */,
 				295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */,
+				295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */,
 				29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */,
+				295F218521A7CCF9006391D1 /* SloppySwipeVC2.swift in Sources */,
 				29E166EE219E6B6300B0CC60 /* BitManager.swift in Sources */,
 				295F213E21A01F3E006391D1 /* SwipeableView.swift in Sources */,
 				2987B53A2187E19500ACCD03 /* String+Extension.swift in Sources */,
 				295F216A21A2616E006391D1 /* PRTween.m in Sources */,
+				295F218321A7CCE2006391D1 /* SloppySwipeVC1.swift in Sources */,
 				295F215D21A23F02006391D1 /* SwipeCardView.swift in Sources */,
 				295F216121A2547A006391D1 /* SC3ViewController.swift in Sources */,
 				295F213421A0115A006391D1 /* Scheduler.swift in Sources */,
@@ -602,6 +679,7 @@
 				29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */,
 				29BE0F8A2193E95300572E37 /* NSObject+Extension.swift in Sources */,
 				29E166EA219E5CEE00B0CC60 /* UITableView+Extension.swift in Sources */,
+				295F218121A7CBE9006391D1 /* TransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

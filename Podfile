@@ -4,6 +4,7 @@ inhibit_all_warnings!
 
 def pods
     pod 'SwiftyBeaver'
+    pod 'pop','~>1.0.6'
 end
 
 target 'SSComponents' do
@@ -12,13 +13,6 @@ end
 
 #每次执行install时，修改编译配置
 post_install do |installer|
-    
-    #关闭bitcode(因为有的第三方sdk不支持)
-    #installer.pods_project.targets.each do |target|
-    #    target.build_configurations.each do |config|
-    #        config.build_settings['ENABLE_BITCODE'] = 'NO'
-    #    end
-    #end
     
     #打开 wholeMoldule 优化
     installer.pods_project.build_configurations.each do |config|

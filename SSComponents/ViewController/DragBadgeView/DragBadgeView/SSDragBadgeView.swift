@@ -15,40 +15,59 @@ import UIKit
 class SSDragBadgeView: UIView {
     
     weak var delegate: SSDragBadgeViewDelegate?
-    
     var fillColor: UIColor = UIColor.red {
         didSet {
             shapeLayer.fillColor = oldValue.cgColor;
         }
     }
-    
-    var borderColor: UIColor = UIColor.clear
-    var lineWidth: CGFloat = 1
+ 
     var elasticDuration: CGFloat = 0.5
     var fromRadiusScale: CGFloat = 0.09
     var toRadiusScale: CGFloat = 0.05
     var maxDistanceScale: CGFloat = 8
-    var followTimeInterval: TimeInterval = 0.016
     var bombDuration: TimeInterval = 0.5
     var validRadius: CGFloat = 20
-    var fontSize: CGFloat = 16
+    var fontSize: CGFloat = 16 {
+        didSet {
+            textLabel.font = textLabel.font.withSize(oldValue)
+        }
+    }
+    
+    //增大的点击区域
     var paddingSize: CGFloat = 10
     var hiddenWhenZero: Bool = true
     var fontSizeAutoFit: Bool = false
-    var textColor: UIColor = UIColor.white
+    var textColor: UIColor = UIColor.white {
+        didSet {
+            textLabel.textColor = oldValue
+        }
+    }
+    var text: String {
+        set {
+            textLabel.text = newValue
+            textLabel.isHidden = false
+            isHidden = false
+            if hiddenWhenZero && (text == "0" || text == "")  {
+                isHidden = true
+            }
+            reset()
+        }
+        get {
+            return textLabel.text ?? ""
+        }
+    }
  
     private lazy var overlayView: UIControl = {
-        let _view = UIControl.init(frame: UIScreen.main.bounds)
+        let _view = UIControl(frame: UIScreen.main.bounds)
         _view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         _view.backgroundColor = UIColor.clear
         return _view
     }()
-    private var originSuperView: UIView!
+    private weak var originSuperView: UIView!
     private var viscosity: CGFloat!
-    private var _size: CGSize!
+    private var circleSize: CGSize!
     private var originPoint: CGPoint!
     private var radius: CGFloat!
-    private var padding: Bool!
     private var fromPoint: CGPoint!
     private var toPoint: CGPoint!
     private var fromRadius: CGFloat!
@@ -73,28 +92,14 @@ class SSDragBadgeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
-        config = ConfigSetting()
-        _size = self.frame.size;
-        if !padding {
-            var wrapperframe = self.frame
-            wrapperframe.x -= config.paddingSize
-            wrapperframe.y -= config.paddingSize
-            wrapperframe.width += config.paddingSize * 2
-            wrapperframe.height += config.paddingSize * 2
-            self.frame = wrapperframe
-            padding = true
-        }
-        
-        backgroundColor = UIColor.clear
-        
+    private func setupShapeLayer() {
         shapeLayer = CAShapeLayer()
         self.layer.addSublayer(shapeLayer)
-        shapeLayer.frame = CGRect(x: 0, y: 0, width: _size.width, height: _size.height)
-        shapeLayer.fillColor = config.tintColor.cgColor
-        radius = _size.width * 0.5;
-        originPoint = CGPoint(x: config.paddingSize + radius, y: config.paddingSize + radius)
-        
+        shapeLayer.frame = CGRect(x: 0, y: 0, width: circleSize.width, height: circleSize.height)
+        shapeLayer.fillColor = fillColor.cgColor
+    }
+    
+    private func setupAnimateImage() {
         bombImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 34, height: 34))
         bombImageView.animationImages = [
             UIImage(named: "bomb1"),
@@ -103,44 +108,48 @@ class SSDragBadgeView: UIView {
             UIImage(named: "bomb4"),
             ] as? [UIImage]
         bombImageView.animationRepeatCount = 1
-        bombImageView.animationDuration = config.bombDuration
+        bombImageView.animationDuration = bombDuration
         self.addSubview(bombImageView)
-        
-        textLabel = UILabel(frame: CGRect(x: config.paddingSize, y: config.paddingSize, width: _size.width, height: _size.width))
-        textLabel.textColor = config.textColor
+    }
+    
+    private func setupTextLabel() {
+        textLabel = UILabel(frame: CGRect(x: paddingSize, y: paddingSize, width: circleSize.width, height: circleSize.width))
+        textLabel.textColor = textColor
         textLabel.textAlignment = .center
         textLabel.text = ""
         self.addSubview(textLabel)
-        
+    }
+    
+    private func setupGesture() {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPanAction(_:)))
         panGestureRecognizer.delaysTouchesBegan = true
         panGestureRecognizer.delaysTouchesEnded = true
         self.addGestureRecognizer(panGestureRecognizer)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func setup() {
+        circleSize = self.frame.size;
+        var wrapperframe = self.frame
         
-        reset()
+        wrapperframe.x -= paddingSize
+        wrapperframe.y -= paddingSize
+        wrapperframe.width += paddingSize * 2
+        wrapperframe.height += paddingSize * 2
+        self.frame = wrapperframe
+        
+        radius = circleSize.width * 0.5;
+        originPoint = CGPoint(x: paddingSize + radius, y: paddingSize + radius)
+        backgroundColor = UIColor.clear
+        
+        setupShapeLayer()
+        setupAnimateImage()
+        setupTextLabel()
+        setupGesture()
     }
     
-    @objc private func onPanAction(_ pgr: UIPanGestureRecognizer) {
-        if !beEnableDragDrop { return }
-        
-        let point = pgr.location(in: self)
-        switch pgr.state {
-        case .began:
-            onPanBeginAction(point)
-            break
-        case .changed:
-            onPanMovedAction(point)
-            break
-        case .ended:
-            onPanEndAction(point)
-            break
-        default:
-            break
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        reset()
     }
     
     private func becomeUpper() {
@@ -178,6 +187,94 @@ class SSDragBadgeView: UIView {
         overlayView.addSubview(self)
     }
     
+    @objc private func update(_ period: PRTweenPeriod) {
+        let c = period.tweenedValue
+        
+        if c.isNaN || c > 10000000 || c < -10000000 { return }
+        if missed {
+            let x = distance != 0 ? (toPoint.x - elasticBeginPoint.x) * c / distance : 0
+            let y = distance != 0 ? (toPoint.y - elasticBeginPoint.y) * c / distance : 0
+            fromPoint = CGPoint(x: elasticBeginPoint.x + x, y: elasticBeginPoint.y + y)
+        } else {
+            let x = distance != 0 ? (fromPoint.x - elasticBeginPoint.x) * c / distance : 0
+            let y = distance != 0 ? (fromPoint.y - elasticBeginPoint.y) * c / distance : 0
+            toPoint = CGPoint(x: elasticBeginPoint.x + x, y: elasticBeginPoint.y + y)
+        }
+        updateRadius()
+    }
+    
+    private func resignUpper() {
+        center = overlayView.convert(center, to: originSuperView)
+        var shouldAdd = true
+        if originSuperView.isKind(of: UITableViewCell.self)  {
+            if
+                let cell = originSuperView as? UITableViewCell,
+                let accessoryView = cell.accessoryView {
+                if accessoryView == self {
+                    cell.accessoryView = self
+                    shouldAdd = false
+                }
+            }
+        }
+        if shouldAdd {
+            originSuperView.addSubview(self)
+        }
+        overlayView.removeFromSuperview()
+    }
+    
+    private func updateRadius() {
+        let r = _distance(between: fromPoint, p2: toPoint)
+        fromRadius = radius - fromRadiusScale * r
+        toRadius = radius - toRadiusScale * r
+        viscosity = maxDistance != 0 ? 1 - r / maxDistance : 1
+        if fontSizeAutoFit {
+            if let text = textLabel.text {
+                if text != "" {
+                    textLabel.font = textLabel.font.withSize((2 * toRadius) / (1.2 * CGFloat(text.count)))
+                }
+            } else {
+                textLabel.font = textLabel.font.withSize(fontSize)
+            }
+        }
+        textLabel.center = toPoint
+        setNeedsDisplay()
+    }
+    
+    private func reset() {
+        fromPoint = originPoint
+        toPoint = fromPoint
+        maxDistance = maxDistanceScale * radius
+        beEnableDragDrop = true
+        updateRadius()
+    }
+    
+    deinit {
+        print("--")
+    }
+}
+
+//MARK: - pan action
+extension SSDragBadgeView {
+    
+    @objc private func onPanAction(_ pgr: UIPanGestureRecognizer) {
+        if !beEnableDragDrop { return }
+        
+        let point = pgr.location(in: self)
+        switch pgr.state {
+        case .began:
+            onPanBeginAction(point)
+            break
+        case .changed:
+            onPanMovedAction(point)
+            break
+        case .ended:
+            onPanEndAction(point)
+            break
+        default:
+            break
+        }
+    }
+    
     private func onPanBeginAction(_ point: CGPoint) {
         missed = false
         becomeUpper()
@@ -188,15 +285,14 @@ class SSDragBadgeView: UIView {
             elasticBeginPoint = toPoint
             distance = _distance(between: fromPoint, p2: toPoint)
             PRTween.sharedInstance()?.remove(activeTweenOperation)
-            if let period = PRTweenPeriod.period(withStartValue: 0, endValue: distance, duration: config.elasticDuration) as? PRTweenPeriod {
+            if let period = PRTweenPeriod.period(withStartValue: 0, endValue: distance, duration: elasticDuration) as? PRTweenPeriod {
                 activeTweenOperation = PRTween.sharedInstance()?.add(period, target: self, selector: #selector(update(_:)), timing: PRTweenTimingFunctionElasticOut)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(config.elasticDuration)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(elasticDuration)) {
                     self.resignUpper()
                 }
             }
         } else {
-            if CGRect(x: originPoint.x - config.validRadius, y: originPoint.y - config.validRadius, width: 2 * config.validRadius, height: 2 * config.validRadius).contains(point) {
+            if CGRect(x: originPoint.x - validRadius, y: originPoint.y - validRadius, width: 2 * validRadius, height: 2 * validRadius).contains(point) {
                 resignUpper()
                 reset()
             } else {
@@ -208,8 +304,7 @@ class SSDragBadgeView: UIView {
                 beEnableDragDrop = false
                 activeTweenOperation.updateSelector = nil
                 PRTween.sharedInstance()?.remove(activeTweenOperation)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(config.bombDuration)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(bombDuration)) {
                     self.resignUpper()
                 }
                 delegate?.dragBadgeViewDidDraggedCompletion?()
@@ -229,13 +324,13 @@ class SSDragBadgeView: UIView {
             }
         } else {
             toPoint = point
-            if r > maxDistance {
+            if r > maxDistance {//超过范围 爆炸
                 missed = true
                 elasticBeginPoint = fromPoint
                 distance = _distance(between: fromPoint, p2: toPoint)
                 PRTween.sharedInstance()?.remove(activeTweenOperation)
                 
-                if let period = PRTweenPeriod.period(withStartValue: 0, endValue: distance, duration: config.elasticDuration) as? PRTweenPeriod {
+                if let period = PRTweenPeriod.period(withStartValue: 0, endValue: distance, duration: elasticDuration) as? PRTweenPeriod {
                     activeTweenOperation = PRTween.sharedInstance()?.add(period, target: self, selector: #selector(update(_:)), timing: PRTweenTimingFunctionElasticOut)
                 }
             } else {
@@ -243,70 +338,13 @@ class SSDragBadgeView: UIView {
             }
         }
     }
+}
 
-    
-    @objc private func update(_ period: PRTweenPeriod) {
-        let c = period.tweenedValue
-        
-        if c.isNaN || c > 10000000 || c < -10000000 { return }
-        if missed {
-            let x = distance != 0 ? (toPoint.x - elasticBeginPoint.x) * c / distance : 0
-            let y = distance != 0 ? (toPoint.y - elasticBeginPoint.y) * c / distance : 0
-            fromPoint = CGPoint(x: elasticBeginPoint.x + x, y: elasticBeginPoint.y + y)
-        } else {
-            let x = distance != 0 ? (fromPoint.x - elasticBeginPoint.x) * c / distance : 0
-            let y = distance != 0 ? (fromPoint.y - elasticBeginPoint.y) * c / distance : 0
-            toPoint = CGPoint(x: elasticBeginPoint.x + x, y: elasticBeginPoint.y + y)
-        }
-        updateRadius()
-    }
-    
-    private func resignUpper() {
-        center = overlayView.convert(center, to: originSuperView)
-   
-        var shouldAdd = true
-        if originSuperView.isKind(of: UITableViewCell.self)  {
-            if
-                let cell = originSuperView as? UITableViewCell,
-                let accessoryView = cell.accessoryView {
-                if accessoryView == self {
-                    cell.accessoryView = self
-                    shouldAdd = false
-                }
-            }
-        }
-        if shouldAdd {
-            originSuperView.addSubview(self)
-        }
-        overlayView.removeFromSuperview()
-        //overlayView = nil
-    }
-    
-    private func updateRadius() {
-        let r = _distance(between: fromPoint, p2: toPoint)
-        fromRadius = radius - config.fromRadiusScale * r
-        toRadius = radius - config.toRadiusScale * r
-        viscosity = maxDistance != 0 ? 1 - r / maxDistance : 1
-        if config.fontSizeAutoFit {
-            if let text = textLabel.text {
-                if text != "" {
-                    textLabel.font = textLabel.font.withSize((2 * toRadius) / (1.2 * CGFloat(text.count)))
-                }
-            }
-            else {
-                textLabel.font = textLabel.font.withSize(config.fontSize)
-            }
-        }
-        textLabel.center = toPoint
-        setNeedsDisplay()
-    }
-    
-    private func reset() {
-        fromPoint = originPoint
-        toPoint = fromPoint
-        maxDistance = config.maxDistanceScale * radius
-        beEnableDragDrop = true
-        self.updateRadius()
+//MARK: - draw
+extension SSDragBadgeView {
+    override func draw(_ rect: CGRect) {
+        let path = bezierPath(with: fromPoint, toPoint: toPoint, fromRadius: fromRadius, toRadius: toRadius, scale: viscosity)
+        shapeLayer.path = path?.cgPath
     }
     
     private func bezierPath(with fromPoint: CGPoint, toPoint: CGPoint, fromRadius: CGFloat,
@@ -328,6 +366,7 @@ class SSDragBadgeView: UIView {
             }
             path.addArc(withCenter: center, radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         } else {
+            
             let originX = toPoint.x - fromPoint.x
             let originY = toPoint.y - fromPoint.y
             
@@ -335,18 +374,19 @@ class SSDragBadgeView: UIView {
             let fromOffsetAngel = fromRadius >= toRadius ? acos(offsetY / r) : CGFloat.pi - acos(offsetY / r)
             let fromStartAngel = fromOriginAngel + fromOffsetAngel
             let fromEndAngel = fromOriginAngel - fromOffsetAngel
-            let fromStartPoint = CGPoint.init(x: x + cos(fromStartAngel) * fromRadius, y: fromPoint.y + sin(fromStartAngel) * fromRadius)
+            let fromStartPoint = CGPoint(x: fromPoint.x + cos(fromStartAngel) * fromRadius, y: fromPoint.y + sin(fromStartAngel) * fromRadius)
             
             let toOriginAngel = originX < 0 ? atan(originY / originX) : atan(originY / originX) + CGFloat.pi
             let toOffsetAngel = fromRadius < toRadius ? acos(offsetY / r) : CGFloat.pi - acos(offsetY / r)
-            let toStartAngel = toOriginAngel - toOffsetAngel
+            let toStartAngel = toOriginAngel + toOffsetAngel
             let toEndAngel = toOriginAngel - toOffsetAngel
             let toStartPoint = CGPoint(x: toPoint.x + cos(toStartAngel) * toRadius, y: toPoint.y + sin(toStartAngel) * toRadius)
             
-            let middlePoint = CGPoint.init(x: fromPoint.x + (toPoint.x - fromPoint.x) * 0.5, y: fromPoint.y + (toPoint.y - fromPoint.y) * 0.5)
+            let middlePoint = CGPoint(x: fromPoint.x + (toPoint.x - fromPoint.x) * 0.5, y: fromPoint.y + (toPoint.y - fromPoint.y) * 0.5)
             let middleRadius = (fromRadius + toRadius) * 0.5
-            let fromControlPoint = CGPoint.init(x: middlePoint.x + sin(fromOriginAngel) * middleRadius * scale, y: middlePoint.y - cos(fromOriginAngel) * middleRadius * scale)
-            let toControlPoint = CGPoint.init(x: middlePoint.x + sin(toOriginAngel) * middleRadius * scale, y: middlePoint.y - cos(toOriginAngel) * middleRadius * scale)
+            let fromControlPoint = CGPoint(x: middlePoint.x + sin(fromOriginAngel) * middleRadius * scale, y: middlePoint.y - cos(fromOriginAngel) * middleRadius * scale)
+            let toControlPoint = CGPoint(x: middlePoint.x + sin(toOriginAngel) * middleRadius * scale, y: middlePoint.y - cos(toOriginAngel) * middleRadius * scale)
+            
             path.move(to: fromStartPoint)
             path.addArc(withCenter: fromPoint, radius: fromRadius, startAngle: fromStartAngel, endAngle: fromEndAngel, clockwise: true)
             if r > fromRadius + toRadius {
@@ -359,11 +399,6 @@ class SSDragBadgeView: UIView {
         }
         path.close()
         return path
-    }
-    
-    override func draw(_ rect: CGRect) {
-        let path = bezierPath(with: fromPoint, toPoint: toPoint, fromRadius: fromRadius, toRadius: toRadius, scale: viscosity)
-        shapeLayer.path = path?.cgPath
     }
 }
 

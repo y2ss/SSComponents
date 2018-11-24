@@ -1,27 +1,24 @@
 //
-//  ViewController.swift
+//  ButtonViewController.swift
 //  SSComponents
 //
-//  Created by y2ss on 2018/10/30.
+//  Created by y2ss on 2018/11/24.
 //  Copyright © 2018年 y2ss. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ButtonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private var tableView: UITableView!
     private let dataSource = [
-        "Calendar",
-        "SwipeCard",
-        "DragBadge",
-        "Transition",
-        "Button",
-        "ImagePicker",
-    ]
+        "PopButton",
+        "CheckButton",
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView = UITableView()
         tableView.frame = self.view.bounds
         tableView.delegate = self
@@ -43,27 +40,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.navigationController?.pushViewController(CalendarViewController(), animated: true)
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopButtonViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            self.navigationController?.pushViewController(SwipeCardViewController(), animated: true)
-            break
-        case 2:
-            self.navigationController?.pushViewController(DragBadgeViewController(), animated: true)
-            break
-        case 3:
-            self.navigationController?.present(TransitionViewController(), animated: true, completion: nil)
-            break
-        case 4:
-            self.navigationController?.pushViewController(ButtonViewController(), animated: true)
-            break
-        case 5:
-            self.navigationController?.present(SSImagePickerController(), animated: true, completion: nil)
+            
             break
         default:
             break
         }
     }
 }
-
-

@@ -44,7 +44,7 @@ class ButtonViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.navigationController?.pushViewController(vc, animated: true)
             break
         case 1:
-            
+            self.navigationController?.pushViewController(CheckBoxViewController(), animated: true)
             break
         default:
             break

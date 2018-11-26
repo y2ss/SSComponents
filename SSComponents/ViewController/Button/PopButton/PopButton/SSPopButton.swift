@@ -55,17 +55,17 @@ class SSPopButton: UIButton {
     var style: Style = .round
     
     var lineThickness: CGFloat = 2 {
-        didSet {
-            firstSegment.lineThickness = oldValue
-            secondSegment.lineThickness = oldValue
-            thirdSegment.lineThickness = oldValue
+        willSet {
+            firstSegment.lineThickness = newValue
+            secondSegment.lineThickness = newValue
+            thirdSegment.lineThickness = newValue
         }
     }
     var lineRadius: CGFloat = 0 {
-        didSet {
-            firstSegment.lineRadius = oldValue
-            secondSegment.lineRadius = oldValue
-            thirdSegment.lineRadius = oldValue
+        willSet {
+            firstSegment.lineRadius = newValue
+            secondSegment.lineRadius = newValue
+            thirdSegment.lineRadius = newValue
         }
     }
  
@@ -76,29 +76,29 @@ class SSPopButton: UIButton {
     private var bckgLayer: CALayer?
     private var animateToStartPosition: Bool = true
     var roundBackgroundColor: UIColor = UIColor.white {
-        didSet {
+        willSet {
             if style == .round {
                 if bckgLayer == nil {
                     setupBackgroundLayer()
                 }
-                bckgLayer?.backgroundColor = oldValue.cgColor
             }
+            bckgLayer?.backgroundColor = newValue.cgColor
         }
     }
     
-    override convenience init(frame: CGRect) {
+    convenience override init(frame: CGRect) {
         self.init(frame: frame, type: .default, style: .plain, animate: true)
     }
     
     init(frame: CGRect, type: PopButtonType, style: Style, animate: Bool) {
         super.init(frame: frame)
+        self.style = style
         commonSetup()
         self.type = type
-        self.style = style
         self.animateToStartPosition = animate
         self.tintColor = UIColor.white
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -130,10 +130,10 @@ class SSPopButton: UIButton {
     }
     
     override var tintColor: UIColor! {
-        didSet {
-            firstSegment.lineColor = oldValue
-            secondSegment.lineColor = oldValue
-            thirdSegment.lineColor = oldValue
+        willSet {
+            firstSegment.lineColor = newValue
+            secondSegment.lineColor = newValue
+            thirdSegment.lineColor = newValue
         }
     }
     
@@ -382,15 +382,15 @@ private class PopSegment: CALayer {
     var segmentState: state = .default
     
     var lineThickness: CGFloat = 0 {
-        didSet {
-            topAnchorPoint = (totalLength * 0.5) / ((totalLength + oldValue) * 0.5)
+        willSet {
+            topAnchorPoint = (totalLength * 0.5) / ((totalLength + newValue) * 0.5)
             if bottomLine != nil {
-                bottomLine.bounds = CGRect(x: 0, y: 0, width: oldValue, height: (totalLength + oldValue) * 0.5)
+                bottomLine.bounds = CGRect(x: 0, y: 0, width: newValue, height: (totalLength + newValue) * 0.5)
                 bottomLine.path = UIBezierPath(roundedRect: bottomLine.bounds, cornerRadius: lineRadius).cgPath
                 bottomLine.anchorPoint = CGPoint(x: 0.5, y: 1 - topAnchorPoint)
             }
             if topLine != nil {
-                topLine.bounds = CGRect(x: 0, y: 0, width: oldValue, height: (totalLength + oldValue) * 0.5)
+                topLine.bounds = CGRect(x: 0, y: 0, width: newValue, height: (totalLength + newValue) * 0.5)
                 topLine.path = UIBezierPath(roundedRect: topLine.bounds, cornerRadius: lineRadius).cgPath
                 topLine.anchorPoint = CGPoint(x: 0.5, y: topAnchorPoint)
             }
@@ -398,23 +398,23 @@ private class PopSegment: CALayer {
     }
     
     var lineRadius: CGFloat = 0 {
-        didSet {
+        willSet {
             if bottomLine != nil {
-                bottomLine.path = UIBezierPath(roundedRect: bottomLine.bounds, cornerRadius: oldValue).cgPath
+                bottomLine.path = UIBezierPath(roundedRect: bottomLine.bounds, cornerRadius: newValue).cgPath
             }
             if topLine.path != nil {
-                topLine.path = UIBezierPath(roundedRect: topLine.bounds, cornerRadius: oldValue).cgPath
+                topLine.path = UIBezierPath(roundedRect: topLine.bounds, cornerRadius: newValue).cgPath
             }
         }
     }
     
     var lineColor: UIColor = UIColor.white {
-        didSet {
+        willSet {
             if bottomLine != nil {
-                bottomLine.fillColor = oldValue.cgColor
+                bottomLine.fillColor = newValue.cgColor
             }
             if topLine.path != nil {
-                topLine.fillColor = oldValue.cgColor
+                topLine.fillColor =  newValue.cgColor
             }
         }
     }

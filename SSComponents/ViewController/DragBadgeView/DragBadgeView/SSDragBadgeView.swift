@@ -16,8 +16,8 @@ class SSDragBadgeView: UIView {
     
     weak var delegate: SSDragBadgeViewDelegate?
     var fillColor: UIColor = UIColor.red {
-        didSet {
-            shapeLayer.fillColor = oldValue.cgColor;
+        willSet {
+            shapeLayer.fillColor = newValue.cgColor;
         }
     }
  
@@ -28,8 +28,8 @@ class SSDragBadgeView: UIView {
     var bombDuration: TimeInterval = 0.5
     var validRadius: CGFloat = 20
     var fontSize: CGFloat = 16 {
-        didSet {
-            textLabel.font = textLabel.font.withSize(oldValue)
+        willSet {
+            textLabel.font = textLabel.font.withSize(newValue)
         }
     }
     
@@ -38,8 +38,8 @@ class SSDragBadgeView: UIView {
     var hiddenWhenZero: Bool = true
     var fontSizeAutoFit: Bool = false
     var textColor: UIColor = UIColor.white {
-        didSet {
-            textLabel.textColor = oldValue
+        willSet {
+            textLabel.textColor = newValue
         }
     }
     var text: String {

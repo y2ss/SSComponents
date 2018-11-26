@@ -12,25 +12,26 @@ import ObjectiveC
 extension String {
     
     subscript (r: Range<Int>) -> String {
-        get {
-            if r.lowerBound > count || r.upperBound > count {
-                fatalError("string substring error")
-            }
-            let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
-            let endIndex = self.index(self.startIndex, offsetBy: r.upperBound)
-            return String(self[startIndex ..< endIndex])
+        if r.lowerBound > count || r.upperBound > count {
+            fatalError("string substring error")
         }
+        let startIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
+        let endIndex = self.index(self.startIndex, offsetBy: r.upperBound)
+        return String(self[startIndex ..< endIndex])
+    }
+    
+    subscript (i: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
     
     func trim() -> String {
         var str = self
         str = str.trimmingCharacters(in: CharacterSet.controlCharacters)
         str = str.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
         return str
     }
     
-    func midlleSpace() -> String {
+    func middleSpace() -> String {
         var str = self
         str = str.replacingOccurrences(of: " ", with: "")
         return str

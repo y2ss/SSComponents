@@ -28,6 +28,7 @@ class PopButtonViewController: UIViewController {
         plainBtn = SSPopButton(frame: CGRect(x: 200, y: 100, width: 30, height: 30), type: .add, style: .plain, animate: false)
         plainBtn.lineThickness = 2
         plainBtn.tintColor = UIColor.white
+        plainBtn.backgroundColor = UIColor.clear
         plainBtn.addTarget(self, action: #selector(randomPlain), for: .touchUpInside)
         self.view.addSubview(plainBtn)
     }

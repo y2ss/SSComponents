@@ -13,8 +13,10 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
     private var swipe: SSSloppySwiper!
     private var tableView: UITableView!
     private var nav: UINavigationController!
+    private var nav2: UINavigationController!
     private let dataSource = [
         "SloppySwipe",
+        "PictureSwipe"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
         swipe = SSSloppySwiper.init(navigationController: nav)
         nav.delegate = swipe
         self.nav = nav
+        
+        let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PictureSwipeVC1")
+        nav2 = UINavigationController.init(rootViewController: vc2)
         
         tableView = UITableView()
         tableView.frame = self.view.bounds
@@ -47,6 +52,9 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
         switch indexPath.row {
         case 0:
             self.present(nav, animated: true, completion: nil)
+            break
+        case 1:
+            self.present(nav2, animated: true, completion: nil)
             break
         default:
             break

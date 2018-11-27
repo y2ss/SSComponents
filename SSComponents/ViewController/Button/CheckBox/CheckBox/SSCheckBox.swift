@@ -66,7 +66,6 @@ class SSCheckBox: UIControl {
             reload()
         }
     }
-    var group: SSCheckBoxGroup?
     var type: SSCheckBoxType = .circle {
         willSet {
             pathMgr.type = newValue
@@ -178,11 +177,6 @@ class SSCheckBox: UIControl {
     }
     
     @objc private func tapCheckBox(_ tgr: UITapGestureRecognizer) {
-        if let _ = self.group {
-            if self.on {
-                return
-            }
-        }
         setOn(!on, animated: true)
         delegate?.checkBoxDidTap?(self)
         sendActions(for: .valueChanged)

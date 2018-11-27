@@ -26,6 +26,118 @@
             </objects>
             <point key="canvasLocation" x="-698" y="134"/>
         </scene>
+        <!--Picture SwipeVC1-->
+        <scene sceneID="Jzu-wr-Itt">
+            <objects>
+                <viewController storyboardIdentifier="PictureSwipeVC1" id="qzf-7C-AFl" customClass="PictureSwipeVC1" customModule="SSComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRd-LQ-EIk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gug-px-cRA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xwz-Gy-ad0">
+                                    <size key="itemSize" width="300" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Cell" id="XKG-Qa-0Rq" customClass="SSPictureSwipeCell" customModule="SSComponents" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="i1X-pv-vOR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="i1X-pv-vOR" firstAttribute="leading" secondItem="XKG-Qa-0Rq" secondAttribute="leading" id="0fN-3S-6rF"/>
+                                            <constraint firstAttribute="bottom" secondItem="i1X-pv-vOR" secondAttribute="bottom" id="Cl4-PK-XAG"/>
+                                            <constraint firstItem="i1X-pv-vOR" firstAttribute="top" secondItem="XKG-Qa-0Rq" secondAttribute="top" id="LYZ-qc-BY8"/>
+                                            <constraint firstAttribute="trailing" secondItem="i1X-pv-vOR" secondAttribute="trailing" id="iEb-Fp-lhv"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgview" destination="i1X-pv-vOR" id="1ex-zm-Haf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSP-Mb-Vsj">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="onBackAction:" destination="qzf-7C-AFl" eventType="touchUpInside" id="8yy-F5-ZW1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YSP-Mb-Vsj" firstAttribute="leading" secondItem="BTO-gJ-7fz" secondAttribute="leading" id="AcH-JK-TD9"/>
+                            <constraint firstItem="BTO-gJ-7fz" firstAttribute="trailing" secondItem="gug-px-cRA" secondAttribute="trailing" id="MO9-Vt-Y5Q"/>
+                            <constraint firstItem="BTO-gJ-7fz" firstAttribute="bottom" secondItem="YSP-Mb-Vsj" secondAttribute="bottom" id="N7x-jq-f0N"/>
+                            <constraint firstItem="gug-px-cRA" firstAttribute="leading" secondItem="BTO-gJ-7fz" secondAttribute="leading" id="dw4-Fy-Lr9"/>
+                            <constraint firstItem="BTO-gJ-7fz" firstAttribute="trailing" secondItem="YSP-Mb-Vsj" secondAttribute="trailing" id="fE9-Ov-TQ9"/>
+                            <constraint firstItem="BTO-gJ-7fz" firstAttribute="bottom" secondItem="gug-px-cRA" secondAttribute="bottom" constant="100" id="gtR-kg-zPx"/>
+                            <constraint firstItem="gug-px-cRA" firstAttribute="top" secondItem="BTO-gJ-7fz" secondAttribute="top" id="my1-3O-Xz4"/>
+                            <constraint firstItem="YSP-Mb-Vsj" firstAttribute="top" secondItem="gug-px-cRA" secondAttribute="bottom" id="rxj-BD-5wL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BTO-gJ-7fz"/>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="gug-px-cRA" id="DdR-qu-Bz3"/>
+                        <outlet property="layout" destination="xwz-Gy-ad0" id="pxV-rg-V8H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zp-0N-pWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698.39999999999998" y="823.53823088455783"/>
+        </scene>
+        <!--Picture SwipeVC2-->
+        <scene sceneID="q88-h7-ElE">
+            <objects>
+                <viewController storyboardIdentifier="PictureSwipeVC2" id="TJr-mf-KU1" customClass="PictureSwipeVC2" customModule="SSComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V6s-to-Esz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ6-NQ-fUz">
+                                <rect key="frame" x="37.5" y="20" width="300" height="200"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fil-WX-8bT">
+                                <rect key="frame" x="20" y="240" width="335" height="343"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fil-WX-8bT" firstAttribute="top" secondItem="ZQ6-NQ-fUz" secondAttribute="bottom" constant="20" id="C3t-Su-m3X"/>
+                            <constraint firstAttribute="bottom" secondItem="Fil-WX-8bT" secondAttribute="bottom" constant="20" id="ESW-Oq-Hg6"/>
+                            <constraint firstItem="eEu-17-3a4" firstAttribute="bottom" secondItem="Fil-WX-8bT" secondAttribute="bottom" constant="20" id="MGc-Zm-7Dx"/>
+                            <constraint firstItem="ZQ6-NQ-fUz" firstAttribute="top" secondItem="eEu-17-3a4" secondAttribute="top" constant="20" id="bHk-P1-Jgu"/>
+                            <constraint firstItem="eEu-17-3a4" firstAttribute="trailing" secondItem="Fil-WX-8bT" secondAttribute="trailing" constant="20" id="gU0-4d-yeL"/>
+                            <constraint firstItem="ZQ6-NQ-fUz" firstAttribute="centerX" secondItem="V6s-to-Esz" secondAttribute="centerX" id="m7n-pO-g7M"/>
+                            <constraint firstItem="Fil-WX-8bT" firstAttribute="leading" secondItem="eEu-17-3a4" secondAttribute="leading" constant="20" id="wh4-tv-XxA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eEu-17-3a4"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="img" destination="ZQ6-NQ-fUz" id="y0l-fP-dtM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LW3-nU-wEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="824"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -306,4 +418,7 @@
             <point key="canvasLocation" x="750" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="300" height="200"/>
+    </resources>
 </document>

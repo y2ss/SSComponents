@@ -58,7 +58,7 @@ class SSSloppySwiper: NSObject {
     }
     
     private func commonInit() {
-        let panRecognizer = PanGestureRecognizer.init(target: self, action: #selector(pan(_:)))
+        let panRecognizer = PanGestureRecognizer(target: self, action: #selector(pan(_:)))
         panRecognizer.direction = .right
         panRecognizer.maximumNumberOfTouches = 1
         panRecognizer.delegate = self

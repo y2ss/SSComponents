@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2936F49721ABC8D500F69917 /* CheckBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49621ABC8D500F69917 /* CheckBoxViewController.swift */; };
+		2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */; };
+		2936F49C21ABE3BC00F69917 /* PictureSwipeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */; };
+		2936F49E21ABEA3900F69917 /* SSPictureSwiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49D21ABEA3900F69917 /* SSPictureSwiper.swift */; };
 		295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F211D219FABC6006391D1 /* SSCalendarView.swift */; };
 		295F2123219FB0C5006391D1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2122219FB0C5006391D1 /* CalendarViewController.swift */; };
 		295F2126219FBCF5006391D1 /* SSPhotoAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2125219FBCF5006391D1 /* SSPhotoAlbumModel.swift */; };
@@ -35,7 +38,6 @@
 		295F218821A7FFE4006391D1 /* SSPopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218721A7FFE4006391D1 /* SSPopButton.swift */; };
 		295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */; };
 		295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218D21A92F05006391D1 /* ButtonViewController.swift */; };
-		295F219121A93312006391D1 /* SSCheckBoxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F219021A93312006391D1 /* SSCheckBoxGroup.swift */; };
 		295F219321A94062006391D1 /* SSCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F219221A94062006391D1 /* SSCheckBox.swift */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
@@ -94,6 +96,9 @@
 
 /* Begin PBXFileReference section */
 		2936F49621ABC8D500F69917 /* CheckBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewController.swift; sourceTree = "<group>"; };
+		2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC1.swift; sourceTree = "<group>"; };
+		2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC2.swift; sourceTree = "<group>"; };
+		2936F49D21ABEA3900F69917 /* SSPictureSwiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPictureSwiper.swift; sourceTree = "<group>"; };
 		295F211D219FABC6006391D1 /* SSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCalendarView.swift; sourceTree = "<group>"; };
 		295F2122219FB0C5006391D1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		295F2125219FBCF5006391D1 /* SSPhotoAlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPhotoAlbumModel.swift; sourceTree = "<group>"; };
@@ -123,7 +128,6 @@
 		295F218721A7FFE4006391D1 /* SSPopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPopButton.swift; sourceTree = "<group>"; };
 		295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopButtonViewController.swift; sourceTree = "<group>"; };
 		295F218D21A92F05006391D1 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
-		295F219021A93312006391D1 /* SSCheckBoxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckBoxGroup.swift; sourceTree = "<group>"; };
 		295F219221A94062006391D1 /* SSCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckBox.swift; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,10 +205,17 @@
 		2936F49521ABC8AE00F69917 /* CheckBox */ = {
 			isa = PBXGroup;
 			children = (
-				295F219021A93312006391D1 /* SSCheckBoxGroup.swift */,
 				295F219221A94062006391D1 /* SSCheckBox.swift */,
 			);
 			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		2936F49821ABDC6500F69917 /* PictureSwipe */ = {
+			isa = PBXGroup;
+			children = (
+				2936F49D21ABEA3900F69917 /* SSPictureSwiper.swift */,
+			);
+			path = PictureSwipe;
 			sourceTree = "<group>";
 		};
 		295F211F219FB08D006391D1 /* ViewController */ = {
@@ -312,10 +323,13 @@
 		295F217F21A7CBD2006391D1 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				2936F49821ABDC6500F69917 /* PictureSwipe */,
 				295F217A21A6AF95006391D1 /* SloppySwipe */,
 				295F218021A7CBE9006391D1 /* TransitionViewController.swift */,
 				295F218221A7CCE2006391D1 /* SloppySwipeVC1.swift */,
 				295F218421A7CCF9006391D1 /* SloppySwipeVC2.swift */,
+				2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */,
+				2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -677,13 +691,13 @@
 				295F215F21A25307006391D1 /* SC2ViewController.swift in Sources */,
 				2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */,
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
-				295F219121A93312006391D1 /* SSCheckBoxGroup.swift in Sources */,
 				29E166F5219EB1A500B0CC60 /* SSCalendarScrollView.swift in Sources */,
 				295F217E21A7A1CE006391D1 /* SSSloppySwiper.swift in Sources */,
 				295F2128219FBE1F006391D1 /* SSPhotoAlbumCache.swift in Sources */,
 				295F219321A94062006391D1 /* SSCheckBox.swift in Sources */,
 				295F217021A2AE25006391D1 /* DragBadgeViewController.swift in Sources */,
 				295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */,
+				2936F49E21ABEA3900F69917 /* SSPictureSwiper.swift in Sources */,
 				295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */,
@@ -699,10 +713,12 @@
 				295F213421A0115A006391D1 /* Scheduler.swift in Sources */,
 				29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */,
 				29E166F1219EA95F00B0CC60 /* SSCalendarModel.swift in Sources */,
+				2936F49C21ABE3BC00F69917 /* PictureSwipeVC2.swift in Sources */,
 				295F215921A23D4B006391D1 /* SwipeCardViewController.swift in Sources */,
 				29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */,
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
+				2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */,
 				29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */,
 				29BE0F8A2193E95300572E37 /* NSObject+Extension.swift in Sources */,
 				2936F49721ABC8D500F69917 /* CheckBoxViewController.swift in Sources */,

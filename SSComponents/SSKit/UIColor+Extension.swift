@@ -11,13 +11,60 @@ import UIKit
 
 extension UIColor {
     
-    convenience init (hex:UInt) {
-        let alpha = (hex >> 24) & 0xFF
+    var redC: CGFloat {
+        get {
+            if let c = self.cgColor.components {
+                return c[0]
+            }
+            return 0
+        }
+    }
+    
+    var greenC: CGFloat {
+        get {
+            if let c = self.cgColor.components {
+                return c[1]
+            }
+            return 0
+        }
+    }
+    
+    var blueC: CGFloat {
+        get {
+            if let c = self.cgColor.components {
+                return c[2]
+            }
+            return 0
+        }
+    }
+    
+    var alpha: CGFloat {
+        get {
+            if let c = self.cgColor.components {
+                return c[3]
+            }
+            return 0
+        }
+    }
+    
+    func alpha(_ alpha: CGFloat) -> UIColor {
+        return UIColor(red: redC, green: greenC, blue: blueC, alpha: alpha)
+    }
+    
+    func white(_ scale: CGFloat) -> UIColor {
+        return UIColor(red: redC + (1 - redC) * scale,
+                       green: greenC + (1 - greenC) * scale,
+                       blue: blueC + (1 - blueC) * scale,
+                       alpha:  1)
+    }
+    
+    convenience init(hex:UInt) {
+//        let alpha = (hex >> 24) & 0xFF
         let red = (hex >> 16) & 0xFF
         let green = (hex >> 8) & 0xFF
         let blue = hex  & 0xFF
         
-        self.init(red:CGFloat(red)/255, green:CGFloat(green)/255, blue:CGFloat(blue)/255, alpha:CGFloat(alpha)/255)
+        self.init(red:CGFloat(red)/255, green:CGFloat(green)/255, blue:CGFloat(blue)/255, alpha:1)
     }
     
     convenience init(colorString:String) {

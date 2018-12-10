@@ -20,4 +20,10 @@ extension Array {
         }
     }
     
+    func each(_ action: (Element) -> ()) {
+        for item in self {
+            action(item)
+        }
+    }
+    
 }

@@ -30,7 +30,7 @@ class PictureSwipeVC2: UIViewController, UINavigationControllerDelegate {
 
         self.navigationController?.delegate = self
         
-        let pan = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(panGestrue(_:)))
+        let pan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(panGestrue(_:)))
         pan.edges = .left
         self.view.addGestureRecognizer(pan)
     }

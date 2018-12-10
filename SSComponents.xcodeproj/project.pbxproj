@@ -11,6 +11,23 @@
 		2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */; };
 		2936F49C21ABE3BC00F69917 /* PictureSwipeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */; };
 		2936F49E21ABEA3900F69917 /* SSPictureSwiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49D21ABEA3900F69917 /* SSPictureSwiper.swift */; };
+		2936F4A321B257EC00F69917 /* SSTwinkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4A221B257EC00F69917 /* SSTwinkle.swift */; };
+		2936F4A621B25F7D00F69917 /* EmitterAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4A521B25F7D00F69917 /* EmitterAnimationViewController.swift */; };
+		2936F4AA21B25FA700F69917 /* TwinkleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4A921B25FA700F69917 /* TwinkleViewController.swift */; };
+		2936F4AE21B2623100F69917 /* FireworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4AD21B2623100F69917 /* FireworksViewController.swift */; };
+		2936F4B021B2624E00F69917 /* SSFireworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4AF21B2624E00F69917 /* SSFireworks.swift */; };
+		2936F4B421B273DF00F69917 /* SSLiquidButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4B321B273DF00F69917 /* SSLiquidButton.swift */; };
+		2936F4B621B2920B00F69917 /* LiquidButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4B521B2920B00F69917 /* LiquidButtonViewController.swift */; };
+		2936F4B821B2958800F69917 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4B721B2958800F69917 /* UINavigationController+Extension.swift */; };
+		2936F4BC21B4C04000F69917 /* SSRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4BB21B4C04000F69917 /* SSRippleButton.swift */; };
+		2936F4BF21B4C0BE00F69917 /* SSRippleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4BE21B4C0BE00F69917 /* SSRippleLayer.swift */; };
+		2936F4C321B5052A00F69917 /* RippleButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4C221B5052A00F69917 /* RippleButtonViewController.swift */; };
+		2936F4C621B50E8500F69917 /* RippleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4C521B50E8500F69917 /* RippleTableViewCell.swift */; };
+		2936F4CD21B538A400F69917 /* SSProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4CC21B538A400F69917 /* SSProgress.swift */; };
+		2936F4CF21B5398D00F69917 /* SSProgressCircularLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4CE21B5398D00F69917 /* SSProgressCircularLayer.swift */; };
+		2936F4D121B53B8A00F69917 /* SSProgressLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4D021B53B8A00F69917 /* SSProgressLayer.swift */; };
+		2936F4D321B6302C00F69917 /* SSProgressLinearLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4D221B6302C00F69917 /* SSProgressLinearLayer.swift */; };
+		2936F4D621B6568900F69917 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F4D521B6568900F69917 /* ProgressViewController.swift */; };
 		295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F211D219FABC6006391D1 /* SSCalendarView.swift */; };
 		295F2123219FB0C5006391D1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2122219FB0C5006391D1 /* CalendarViewController.swift */; };
 		295F2126219FBCF5006391D1 /* SSPhotoAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2125219FBCF5006391D1 /* SSPhotoAlbumModel.swift */; };
@@ -39,6 +56,7 @@
 		295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */; };
 		295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218D21A92F05006391D1 /* ButtonViewController.swift */; };
 		295F219321A94062006391D1 /* SSCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F219221A94062006391D1 /* SSCheckBox.swift */; };
+		2979A66E21B93A9E00F9E110 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2979A66D21B93A9E00F9E110 /* TextFieldViewController.swift */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
 		2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2987B50A2187DEA100ACCD03 /* Main.storyboard */; };
@@ -65,6 +83,11 @@
 		29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */; };
 		29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F95219665FD00572E37 /* UIButton+Extension.swift */; };
 		29BE0F9821966E1300572E37 /* BadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9721966E1300572E37 /* BadgeProtocol.swift */; };
+		29D37DDD21B6976200F4E87C /* SSAutoResizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DDC21B6976200F4E87C /* SSAutoResizeTextField.swift */; };
+		29D37DDF21B6979900F4E87C /* AutoResizeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DDE21B6979900F4E87C /* AutoResizeTextView.swift */; };
+		29D37DE121B776F600F4E87C /* TextSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DE021B776F600F4E87C /* TextSuggestView.swift */; };
+		29D37DE321B7830D00F4E87C /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DE221B7830D00F4E87C /* Then.swift */; };
+		29D37DE521B7857000F4E87C /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DE421B7857000F4E87C /* UIWindow+Extension.swift */; };
 		29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166DD219D4C5200B0CC60 /* UITextField+Extension.swift */; };
 		29E166E0219D5A0B00B0CC60 /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166DF219D5A0B00B0CC60 /* CAGradientLayer+Extension.swift */; };
 		29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */; };
@@ -99,6 +122,23 @@
 		2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC1.swift; sourceTree = "<group>"; };
 		2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC2.swift; sourceTree = "<group>"; };
 		2936F49D21ABEA3900F69917 /* SSPictureSwiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPictureSwiper.swift; sourceTree = "<group>"; };
+		2936F4A221B257EC00F69917 /* SSTwinkle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTwinkle.swift; sourceTree = "<group>"; };
+		2936F4A521B25F7D00F69917 /* EmitterAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmitterAnimationViewController.swift; sourceTree = "<group>"; };
+		2936F4A921B25FA700F69917 /* TwinkleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinkleViewController.swift; sourceTree = "<group>"; };
+		2936F4AD21B2623100F69917 /* FireworksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireworksViewController.swift; sourceTree = "<group>"; };
+		2936F4AF21B2624E00F69917 /* SSFireworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFireworks.swift; sourceTree = "<group>"; };
+		2936F4B321B273DF00F69917 /* SSLiquidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLiquidButton.swift; sourceTree = "<group>"; };
+		2936F4B521B2920B00F69917 /* LiquidButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidButtonViewController.swift; sourceTree = "<group>"; };
+		2936F4B721B2958800F69917 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		2936F4BB21B4C04000F69917 /* SSRippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRippleButton.swift; sourceTree = "<group>"; };
+		2936F4BE21B4C0BE00F69917 /* SSRippleLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRippleLayer.swift; sourceTree = "<group>"; };
+		2936F4C221B5052A00F69917 /* RippleButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButtonViewController.swift; sourceTree = "<group>"; };
+		2936F4C521B50E8500F69917 /* RippleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleTableViewCell.swift; sourceTree = "<group>"; };
+		2936F4CC21B538A400F69917 /* SSProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgress.swift; sourceTree = "<group>"; };
+		2936F4CE21B5398D00F69917 /* SSProgressCircularLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressCircularLayer.swift; sourceTree = "<group>"; };
+		2936F4D021B53B8A00F69917 /* SSProgressLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressLayer.swift; sourceTree = "<group>"; };
+		2936F4D221B6302C00F69917 /* SSProgressLinearLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressLinearLayer.swift; sourceTree = "<group>"; };
+		2936F4D521B6568900F69917 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		295F211D219FABC6006391D1 /* SSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCalendarView.swift; sourceTree = "<group>"; };
 		295F2122219FB0C5006391D1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		295F2125219FBCF5006391D1 /* SSPhotoAlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPhotoAlbumModel.swift; sourceTree = "<group>"; };
@@ -129,6 +169,7 @@
 		295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopButtonViewController.swift; sourceTree = "<group>"; };
 		295F218D21A92F05006391D1 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		295F219221A94062006391D1 /* SSCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckBox.swift; sourceTree = "<group>"; };
+		2979A66D21B93A9E00F9E110 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2987B5082187DEA100ACCD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +203,11 @@
 		29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F95219665FD00572E37 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F9721966E1300572E37 /* BadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeProtocol.swift; sourceTree = "<group>"; };
+		29D37DDC21B6976200F4E87C /* SSAutoResizeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAutoResizeTextField.swift; sourceTree = "<group>"; };
+		29D37DDE21B6979900F4E87C /* AutoResizeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeTextView.swift; sourceTree = "<group>"; };
+		29D37DE021B776F600F4E87C /* TextSuggestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSuggestView.swift; sourceTree = "<group>"; };
+		29D37DE221B7830D00F4E87C /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		29D37DE421B7857000F4E87C /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		29E166DD219D4C5200B0CC60 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		29E166DF219D5A0B00B0CC60 /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
 		29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -218,9 +264,136 @@
 			path = PictureSwipe;
 			sourceTree = "<group>";
 		};
+		2936F4A121B257CE00F69917 /* Twinkle */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4A721B25F8F00F69917 /* Twinkle */,
+				2936F4A921B25FA700F69917 /* TwinkleViewController.swift */,
+			);
+			path = Twinkle;
+			sourceTree = "<group>";
+		};
+		2936F4A421B25F0400F69917 /* EmitterAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4AB21B2621400F69917 /* Fireworks */,
+				2936F4A121B257CE00F69917 /* Twinkle */,
+				2936F4A521B25F7D00F69917 /* EmitterAnimationViewController.swift */,
+			);
+			path = EmitterAnimation;
+			sourceTree = "<group>";
+		};
+		2936F4A721B25F8F00F69917 /* Twinkle */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4A221B257EC00F69917 /* SSTwinkle.swift */,
+			);
+			path = Twinkle;
+			sourceTree = "<group>";
+		};
+		2936F4AB21B2621400F69917 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4AC21B2622100F69917 /* Fireworks */,
+				2936F4AD21B2623100F69917 /* FireworksViewController.swift */,
+			);
+			path = Fireworks;
+			sourceTree = "<group>";
+		};
+		2936F4AC21B2622100F69917 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4AF21B2624E00F69917 /* SSFireworks.swift */,
+			);
+			path = Fireworks;
+			sourceTree = "<group>";
+		};
+		2936F4B121B273B900F69917 /* LiquidButton */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4B221B273CE00F69917 /* LiquidButton */,
+				2936F4B521B2920B00F69917 /* LiquidButtonViewController.swift */,
+			);
+			path = LiquidButton;
+			sourceTree = "<group>";
+		};
+		2936F4B221B273CE00F69917 /* LiquidButton */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4B321B273DF00F69917 /* SSLiquidButton.swift */,
+			);
+			path = LiquidButton;
+			sourceTree = "<group>";
+		};
+		2936F4B921B4C02600F69917 /* RippleButton */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4BA21B4C03000F69917 /* RippleButton */,
+				2936F4C221B5052A00F69917 /* RippleButtonViewController.swift */,
+			);
+			path = RippleButton;
+			sourceTree = "<group>";
+		};
+		2936F4BA21B4C03000F69917 /* RippleButton */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4BB21B4C04000F69917 /* SSRippleButton.swift */,
+			);
+			path = RippleButton;
+			sourceTree = "<group>";
+		};
+		2936F4BD21B4C0AB00F69917 /* CALayer */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4BE21B4C0BE00F69917 /* SSRippleLayer.swift */,
+			);
+			path = CALayer;
+			sourceTree = "<group>";
+		};
+		2936F4C421B50E6E00F69917 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4C521B50E8500F69917 /* RippleTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		2936F4C721B5348B00F69917 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4CB21B5389700F69917 /* Progress */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		2936F4CB21B5389700F69917 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4D421B6566E00F69917 /* Progress */,
+				2936F4D521B6568900F69917 /* ProgressViewController.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		2936F4D421B6566E00F69917 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2936F4CC21B538A400F69917 /* SSProgress.swift */,
+				2936F4CE21B5398D00F69917 /* SSProgressCircularLayer.swift */,
+				2936F4D221B6302C00F69917 /* SSProgressLinearLayer.swift */,
+				2936F4D021B53B8A00F69917 /* SSProgressLayer.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		295F211F219FB08D006391D1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				29D37DDA21B695CB00F4E87C /* TextField */,
+				2936F4C721B5348B00F69917 /* Progress */,
+				2936F4C421B50E6E00F69917 /* TableViewCell */,
+				2936F4BD21B4C0AB00F69917 /* CALayer */,
+				2936F4A421B25F0400F69917 /* EmitterAnimation */,
 				295F218C21A92EF2006391D1 /* Button */,
 				295F217F21A7CBD2006391D1 /* Transition */,
 				295F216221A25BE0006391D1 /* DragBadgeView */,
@@ -354,6 +527,8 @@
 		295F218C21A92EF2006391D1 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				2936F4B921B4C02600F69917 /* RippleButton */,
+				2936F4B121B273B900F69917 /* LiquidButton */,
 				295F218F21A931B5006391D1 /* CheckBox */,
 				295F218621A7FFC2006391D1 /* PopButton */,
 				295F218D21A92F05006391D1 /* ButtonViewController.swift */,
@@ -453,10 +628,32 @@
 				29E166E1219D5E1E00B0CC60 /* UIDevice+Extension.swift */,
 				29E166E7219E47DF00B0CC60 /* Array+Extension.swift */,
 				29E166E9219E5CEE00B0CC60 /* UITableView+Extension.swift */,
+				2936F4B721B2958800F69917 /* UINavigationController+Extension.swift */,
+				29D37DE421B7857000F4E87C /* UIWindow+Extension.swift */,
 				29E166ED219E6B6300B0CC60 /* BitManager.swift */,
 				295F213321A0115A006391D1 /* Scheduler.swift */,
+				29D37DE221B7830D00F4E87C /* Then.swift */,
 			);
 			path = SSKit;
+			sourceTree = "<group>";
+		};
+		29D37DDA21B695CB00F4E87C /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				29D37DDB21B695EC00F4E87C /* ResizeTextField */,
+				2979A66D21B93A9E00F9E110 /* TextFieldViewController.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		29D37DDB21B695EC00F4E87C /* ResizeTextField */ = {
+			isa = PBXGroup;
+			children = (
+				29D37DDC21B6976200F4E87C /* SSAutoResizeTextField.swift */,
+				29D37DDE21B6979900F4E87C /* AutoResizeTextView.swift */,
+				29D37DE021B776F600F4E87C /* TextSuggestView.swift */,
+			);
+			path = ResizeTextField;
 			sourceTree = "<group>";
 		};
 		29E166EF219EA92C00B0CC60 /* SSCalendar */ = {
@@ -624,11 +821,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SSComponents/Pods-SSComponents-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -673,9 +872,12 @@
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
 				295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */,
 				295F215B21A23EBC006391D1 /* SC1ViewController.swift in Sources */,
+				2936F4AE21B2623100F69917 /* FireworksViewController.swift in Sources */,
 				295F217C21A6B180006391D1 /* SSSwipeAnimator.swift in Sources */,
 				295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */,
 				295F2131219FEFFA006391D1 /* SSImagePickerController.swift in Sources */,
+				2979A66E21B93A9E00F9E110 /* TextFieldViewController.swift in Sources */,
+				2936F4C321B5052A00F69917 /* RippleButtonViewController.swift in Sources */,
 				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
 				29E166E8219E47DF00B0CC60 /* Array+Extension.swift in Sources */,
 				2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */,
@@ -684,7 +886,10 @@
 				29E166F3219EAF0B00B0CC60 /* SSCalendarCell.swift in Sources */,
 				2987B5442187ED3100ACCD03 /* UIImage+Extension.swift in Sources */,
 				29BE0F8E219537FF00572E37 /* UIScreen+Extension.swift in Sources */,
+				2936F4A321B257EC00F69917 /* SSTwinkle.swift in Sources */,
+				2936F4B621B2920B00F69917 /* LiquidButtonViewController.swift in Sources */,
 				29BE0F92219576C600572E37 /* UIBezierPath+Extension.swift in Sources */,
+				2936F4C621B50E8500F69917 /* RippleTableViewCell.swift in Sources */,
 				29E166E0219D5A0B00B0CC60 /* CAGradientLayer+Extension.swift in Sources */,
 				295F212A219FC087006391D1 /* SSPhotoAlbum.swift in Sources */,
 				295F2123219FB0C5006391D1 /* CalendarViewController.swift in Sources */,
@@ -693,15 +898,21 @@
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
 				29E166F5219EB1A500B0CC60 /* SSCalendarScrollView.swift in Sources */,
 				295F217E21A7A1CE006391D1 /* SSSloppySwiper.swift in Sources */,
+				2936F4D621B6568900F69917 /* ProgressViewController.swift in Sources */,
 				295F2128219FBE1F006391D1 /* SSPhotoAlbumCache.swift in Sources */,
+				2936F4CF21B5398D00F69917 /* SSProgressCircularLayer.swift in Sources */,
 				295F219321A94062006391D1 /* SSCheckBox.swift in Sources */,
 				295F217021A2AE25006391D1 /* DragBadgeViewController.swift in Sources */,
+				2936F4BF21B4C0BE00F69917 /* SSRippleLayer.swift in Sources */,
 				295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */,
+				2936F4B021B2624E00F69917 /* SSFireworks.swift in Sources */,
 				2936F49E21ABEA3900F69917 /* SSPictureSwiper.swift in Sources */,
 				295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */,
+				29D37DDF21B6979900F4E87C /* AutoResizeTextView.swift in Sources */,
 				29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */,
+				29D37DE321B7830D00F4E87C /* Then.swift in Sources */,
 				295F218521A7CCF9006391D1 /* SloppySwipeVC2.swift in Sources */,
 				29E166EE219E6B6300B0CC60 /* BitManager.swift in Sources */,
 				295F213E21A01F3E006391D1 /* SwipeableView.swift in Sources */,
@@ -713,15 +924,26 @@
 				295F213421A0115A006391D1 /* Scheduler.swift in Sources */,
 				29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */,
 				29E166F1219EA95F00B0CC60 /* SSCalendarModel.swift in Sources */,
+				2936F4AA21B25FA700F69917 /* TwinkleViewController.swift in Sources */,
+				2936F4D121B53B8A00F69917 /* SSProgressLayer.swift in Sources */,
+				2936F4D321B6302C00F69917 /* SSProgressLinearLayer.swift in Sources */,
+				29D37DE521B7857000F4E87C /* UIWindow+Extension.swift in Sources */,
 				2936F49C21ABE3BC00F69917 /* PictureSwipeVC2.swift in Sources */,
+				29D37DDD21B6976200F4E87C /* SSAutoResizeTextField.swift in Sources */,
 				295F215921A23D4B006391D1 /* SwipeCardViewController.swift in Sources */,
 				29E166DE219D4C5200B0CC60 /* UITextField+Extension.swift in Sources */,
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
+				2936F4A621B25F7D00F69917 /* EmitterAnimationViewController.swift in Sources */,
+				29D37DE121B776F600F4E87C /* TextSuggestView.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
+				2936F4B421B273DF00F69917 /* SSLiquidButton.swift in Sources */,
+				2936F4BC21B4C04000F69917 /* SSRippleButton.swift in Sources */,
 				2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */,
+				2936F4CD21B538A400F69917 /* SSProgress.swift in Sources */,
 				29BE0F802192DF8100572E37 /* Notification+Extension.swift in Sources */,
 				29BE0F8A2193E95300572E37 /* NSObject+Extension.swift in Sources */,
 				2936F49721ABC8D500F69917 /* CheckBoxViewController.swift in Sources */,
+				2936F4B821B2958800F69917 /* UINavigationController+Extension.swift in Sources */,
 				29E166EA219E5CEE00B0CC60 /* UITableView+Extension.swift in Sources */,
 				295F218121A7CBE9006391D1 /* TransitionViewController.swift in Sources */,
 			);

@@ -2,7 +2,7 @@
 //  SSComponentsUITests.swift
 //  SSComponentsUITests
 //
-//  Created by iwown on 2018/10/30.
+//  Created by y2ss on 2018/10/30.
 //  Copyright © 2018年 y2ss. All rights reserved.
 //
 

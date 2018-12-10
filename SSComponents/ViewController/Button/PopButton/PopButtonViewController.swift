@@ -16,12 +16,12 @@ class PopButtonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(red: 0.20392156862745098, green: 0.596078431372549, blue: 0.8588235294117647, alpha: 1)
-        roundedBtn = SSPopButton.init(frame: CGRect.init(x: 100, y: 100, width: 30, height: 30), type: .menu, style: .round, animate: true)
+        self.view.backgroundColor = UIColor.SSStyle
+        roundedBtn = SSPopButton(frame: CGRect(x: 100, y: 100, width: 30, height: 30), type: .menu, style: .round, animate: true)
         roundedBtn.roundBackgroundColor = UIColor.white
         roundedBtn.lineThickness = 3
         roundedBtn.lineRadius = 1
-        roundedBtn.tintColor = UIColor(red: 0.20392156862745098, green: 0.596078431372549, blue: 0.8588235294117647, alpha: 1)
+        roundedBtn.tintColor = UIColor.SSStyle
         roundedBtn.addTarget(self, action: #selector(randomRound), for: .touchUpInside)
         self.view.addSubview(roundedBtn)
       

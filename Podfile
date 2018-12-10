@@ -5,6 +5,7 @@ inhibit_all_warnings!
 def pods
     pod 'SwiftyBeaver'
     pod 'pop','~>1.0.6'
+    pod 'SnapKit'
 end
 
 target 'SSComponents' do

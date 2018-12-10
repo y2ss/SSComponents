@@ -1,21 +1,19 @@
 //
-//  ButtonViewController.swift
+//  EmitterAnimationViewController.swift
 //  SSComponents
 //
-//  Created by y2ss on 2018/11/24.
+//  Created by y2ss on 2018/12/1.
 //  Copyright © 2018年 y2ss. All rights reserved.
 //
 
 import UIKit
 
-class ButtonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EmitterAnimationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private var tableView: UITableView!
     private let dataSource = [
-        "PopButton",
-        "CheckButton",
-        "LiquidButton",
-        "RippleButton"
+        "Twinkle",
+        "Fireworks",
         ]
     
     override func viewDidLoad() {
@@ -42,20 +40,14 @@ class ButtonViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopButtonViewController")
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(TwinkleViewController(), animated: true)
             break
         case 1:
-            self.navigationController?.pushViewController(CheckBoxViewController(), animated: true)
-            break
-        case 2:
-            self.navigationController?.pushViewController(LiquidButtonViewController(), animated: true)
-            break
-        case 3:
-            self.navigationController?.pushViewController(RippleButtonViewController(), animated: true)
+            self.navigationController?.pushViewController(FireworksViewController(), animated: true)
             break
         default:
             break
         }
     }
+
 }

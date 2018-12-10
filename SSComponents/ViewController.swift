@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         "DragBadge",
         "Transition",
         "Button",
+        "EmitterAnimation",
+        "Progress",
+        "TextField",
         "ImagePicker",
     ]
     
@@ -27,12 +30,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(RippleTableViewCell.self, forCellReuseIdentifier: "Cell")
         self.view.addSubview(tableView)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RippleTableViewCell
+        cell.rippleColor = UIColor.SSStyle
         cell.textLabel?.text = dataSource[indexPath.row]
         return cell
     }
@@ -59,14 +63,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.navigationController?.pushViewController(ButtonViewController(), animated: true)
             break
         case 5:
+            self.navigationController?.pushViewController(EmitterAnimationViewController(), animated: true)
+            break
+        case 6:
+            self.navigationController?.pushViewController(ProgressViewController(), animated: true)
+            break
+        case 7:
+            self.navigationController?.pushViewController(TextFieldViewController(), animated: true)
+            break
+        case 8:
             self.navigationController?.present(SSImagePickerController(), animated: true, completion: nil)
             break
         default:
             break
         }
     }
-    
-
 }
 
+
+extension UIColor {
+    static let SSStyle: UIColor = UIColor(red: 0.20392156862745098, green: 0.596078431372549, blue: 0.8588235294117647, alpha: 1)
+}
 

@@ -14,9 +14,11 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
     private var tableView: UITableView!
     private var nav: UINavigationController!
     private var nav2: UINavigationController!
+    private var nav3: UINavigationController!
     private let dataSource = [
         "SloppySwipe",
-        "PictureSwipe"
+        "PictureSwipe",
+        "CircularSwipe"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,9 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
         
         let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PictureSwipeVC1")
         nav2 = UINavigationController.init(rootViewController: vc2)
+        
+        let vc3 = CircularSwipeVC1()
+        nav3 = UINavigationController.init(rootViewController: vc3)
         
         tableView = UITableView()
         tableView.frame = self.view.bounds
@@ -56,6 +61,8 @@ class TransitionViewController: UIViewController, UITableViewDataSource, UITable
         case 1:
             self.present(nav2, animated: true, completion: nil)
             break
+        case 2:
+            self.present(nav3, animated: true, completion: nil)
         default:
             break
         }

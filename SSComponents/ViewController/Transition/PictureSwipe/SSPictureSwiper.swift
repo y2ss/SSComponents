@@ -15,7 +15,7 @@ class SSPictureSwiper: NSObject, UIViewControllerAnimatedTransitioning {
         case push
     }
     
-    var type: PictureSwiperType
+    private var type: PictureSwiperType
     
     init(type: PictureSwiperType) {
         self.type = type
@@ -77,6 +77,4 @@ class SSPictureSwiper: NSObject, UIViewControllerAnimatedTransitioning {
             }
         }
     }
-    
-    
 }

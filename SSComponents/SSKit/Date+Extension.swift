@@ -182,4 +182,32 @@ extension Date {
         datefomatter.dateFormat = format
         return datefomatter.string(from: self)
     }
+    
+    init?(_ dateString: String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+        formatter.locale = Locale.current
+        if let d = formatter.date(from: dateString) {
+            self.init(timeInterval: 0, since: d)
+        } else {
+            self.init(timeInterval: 0, since: Date())
+            return nil
+        }
+    }
+    
+    @available(iOS 10.0, *)
+    var isoFormatter: ISO8601DateFormatter {
+        if let formatter = objc_getAssociatedObject(self, "formatter") as? ISO8601DateFormatter {
+            return formatter
+        } else {
+            let formatter = ISO8601DateFormatter()
+            objc_setAssociatedObject(self, "formatter", formatter, .OBJC_ASSOCIATION_RETAIN)
+            return formatter
+        }
+    }
+
+    @available(iOS 10.0, *)
+    func toISOString() -> String {
+        return self.isoFormatter.string(from: self)
+    }
 }

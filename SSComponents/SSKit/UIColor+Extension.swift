@@ -14,7 +14,7 @@ extension UIColor {
     var redC: CGFloat {
         get {
             if let c = self.cgColor.components {
-                return c[0]
+                return c.count >= 1 ? c[0] : 0
             }
             return 0
         }
@@ -23,7 +23,7 @@ extension UIColor {
     var greenC: CGFloat {
         get {
             if let c = self.cgColor.components {
-                return c[1]
+                return c.count >= 2 ? c[1] : 0
             }
             return 0
         }
@@ -32,7 +32,7 @@ extension UIColor {
     var blueC: CGFloat {
         get {
             if let c = self.cgColor.components {
-                return c[2]
+                return c.count >= 3 ? c[2] : 0
             }
             return 0
         }
@@ -41,7 +41,7 @@ extension UIColor {
     var alpha: CGFloat {
         get {
             if let c = self.cgColor.components {
-                return c[3]
+                return c.count >= 4 ? c[3] : 0
             }
             return 0
         }

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2926D5D921C1207E002E802C /* PersistanceQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926D5D821C1207E002E802C /* PersistanceQueue.swift */; };
+		2926D5DB21C7AAB2002E802C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926D5DA21C7AAB2002E802C /* Utils.swift */; };
+		2926D5EA21C89E97002E802C /* PersistanceQueue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2926D5E921C89E97002E802C /* PersistanceQueue.storyboard */; };
+		2926D5EF21C89ECB002E802C /* PersistanceQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926D5EE21C89ECB002E802C /* PersistanceQueueViewController.swift */; };
+		2926D5F321C8DC30002E802C /* GridDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926D5F221C8DC30002E802C /* GridDragView.swift */; };
+		2926D5F621C8E599002E802C /* GirdDragViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2926D5F521C8E599002E802C /* GirdDragViewViewController.swift */; };
+		292EB0A321BE3C1B00ED37E8 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EB0A221BE3C1B00ED37E8 /* SwitchViewController.swift */; };
+		292EB0A721BE418D00ED37E8 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EB0A621BE418D00ED37E8 /* SliderViewController.swift */; };
+		292EB0AC21BE429100ED37E8 /* SSBubbleSliderAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EB0AB21BE429100ED37E8 /* SSBubbleSliderAccessory.swift */; };
+		292EB0AE21BE42AC00ED37E8 /* BubbleSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EB0AD21BE42AC00ED37E8 /* BubbleSliderViewController.swift */; };
+		292EB0B021BE5F9D00ED37E8 /* SSBubbleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EB0AF21BE5F9D00ED37E8 /* SSBubbleSlider.swift */; };
+		29304B8D21D4E2950033F2C7 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29304B8C21D4E2950033F2C7 /* Sort.swift */; };
+		29304B8F21E0B96D0033F2C7 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29304B8E21E0B96D0033F2C7 /* Tree.swift */; };
 		2936F49721ABC8D500F69917 /* CheckBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49621ABC8D500F69917 /* CheckBoxViewController.swift */; };
 		2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */; };
 		2936F49C21ABE3BC00F69917 /* PictureSwipeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */; };
@@ -56,7 +69,9 @@
 		295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */; };
 		295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F218D21A92F05006391D1 /* ButtonViewController.swift */; };
 		295F219321A94062006391D1 /* SSCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F219221A94062006391D1 /* SSCheckBox.swift */; };
+		296EBEED21C8E87400F152EB /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296EBEEC21C8E87400F152EB /* CollectionViewController.swift */; };
 		2979A66E21B93A9E00F9E110 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2979A66D21B93A9E00F9E110 /* TextFieldViewController.swift */; };
+		2982922A21BE10A500CB16A4 /* SSFlashSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2982922921BE10A500CB16A4 /* SSFlashSwitch.swift */; };
 		2987B5072187DEA100ACCD03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5062187DEA100ACCD03 /* AppDelegate.swift */; };
 		2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987B5082187DEA100ACCD03 /* ViewController.swift */; };
 		2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2987B50A2187DEA100ACCD03 /* Main.storyboard */; };
@@ -83,6 +98,10 @@
 		29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */; };
 		29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F95219665FD00572E37 /* UIButton+Extension.swift */; };
 		29BE0F9821966E1300572E37 /* BadgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BE0F9721966E1300572E37 /* BadgeProtocol.swift */; };
+		29C5C75921D3668400854848 /* SSCircularSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C75821D3668400854848 /* SSCircularSwipe.swift */; };
+		29C5C75B21D369B900854848 /* CircularSwipeVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C75A21D369B900854848 /* CircularSwipeVC1.swift */; };
+		29C5C75D21D369D800854848 /* CircularSwipeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C75C21D369D800854848 /* CircularSwipeVC2.swift */; };
+		29C5C76021D37DA600854848 /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C75F21D37DA600854848 /* Limiter.swift */; };
 		29D37DDD21B6976200F4E87C /* SSAutoResizeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DDC21B6976200F4E87C /* SSAutoResizeTextField.swift */; };
 		29D37DDF21B6979900F4E87C /* AutoResizeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DDE21B6979900F4E87C /* AutoResizeTextView.swift */; };
 		29D37DE121B776F600F4E87C /* TextSuggestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D37DE021B776F600F4E87C /* TextSuggestView.swift */; };
@@ -118,6 +137,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2926D5D821C1207E002E802C /* PersistanceQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceQueue.swift; sourceTree = "<group>"; };
+		2926D5DA21C7AAB2002E802C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2926D5E921C89E97002E802C /* PersistanceQueue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersistanceQueue.storyboard; sourceTree = "<group>"; };
+		2926D5EE21C89ECB002E802C /* PersistanceQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceQueueViewController.swift; sourceTree = "<group>"; };
+		2926D5F221C8DC30002E802C /* GridDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridDragView.swift; sourceTree = "<group>"; };
+		2926D5F521C8E599002E802C /* GirdDragViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirdDragViewViewController.swift; sourceTree = "<group>"; };
+		292EB0A221BE3C1B00ED37E8 /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		292EB0A621BE418D00ED37E8 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		292EB0AB21BE429100ED37E8 /* SSBubbleSliderAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSBubbleSliderAccessory.swift; sourceTree = "<group>"; };
+		292EB0AD21BE42AC00ED37E8 /* BubbleSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSliderViewController.swift; sourceTree = "<group>"; };
+		292EB0AF21BE5F9D00ED37E8 /* SSBubbleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSBubbleSlider.swift; sourceTree = "<group>"; };
+		29304B8C21D4E2950033F2C7 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		29304B8E21E0B96D0033F2C7 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		2936F49621ABC8D500F69917 /* CheckBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewController.swift; sourceTree = "<group>"; };
 		2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC1.swift; sourceTree = "<group>"; };
 		2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSwipeVC2.swift; sourceTree = "<group>"; };
@@ -169,7 +201,9 @@
 		295F218A21A8E7C5006391D1 /* PopButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopButtonViewController.swift; sourceTree = "<group>"; };
 		295F218D21A92F05006391D1 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		295F219221A94062006391D1 /* SSCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckBox.swift; sourceTree = "<group>"; };
+		296EBEEC21C8E87400F152EB /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		2979A66D21B93A9E00F9E110 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		2982922921BE10A500CB16A4 /* SSFlashSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFlashSwitch.swift; sourceTree = "<group>"; };
 		2987B5032187DEA100ACCD03 /* SSComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2987B5062187DEA100ACCD03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2987B5082187DEA100ACCD03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +237,10 @@
 		29BE0F9321959BFE00572E37 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F95219665FD00572E37 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		29BE0F9721966E1300572E37 /* BadgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeProtocol.swift; sourceTree = "<group>"; };
+		29C5C75821D3668400854848 /* SSCircularSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCircularSwipe.swift; sourceTree = "<group>"; };
+		29C5C75A21D369B900854848 /* CircularSwipeVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSwipeVC1.swift; sourceTree = "<group>"; };
+		29C5C75C21D369D800854848 /* CircularSwipeVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSwipeVC2.swift; sourceTree = "<group>"; };
+		29C5C75F21D37DA600854848 /* Limiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
 		29D37DDC21B6976200F4E87C /* SSAutoResizeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAutoResizeTextField.swift; sourceTree = "<group>"; };
 		29D37DDE21B6979900F4E87C /* AutoResizeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeTextView.swift; sourceTree = "<group>"; };
 		29D37DE021B776F600F4E87C /* TextSuggestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSuggestView.swift; sourceTree = "<group>"; };
@@ -248,6 +286,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2926D5D721C11F12002E802C /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				2926D5E821C89DCC002E802C /* PersistanceQueue */,
+				2926D5E921C89E97002E802C /* PersistanceQueue.storyboard */,
+				2926D5EE21C89ECB002E802C /* PersistanceQueueViewController.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		2926D5E821C89DCC002E802C /* PersistanceQueue */ = {
+			isa = PBXGroup;
+			children = (
+				2926D5D821C1207E002E802C /* PersistanceQueue.swift */,
+			);
+			path = PersistanceQueue;
+			sourceTree = "<group>";
+		};
+		2926D5F021C8DBF1002E802C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2926D5F121C8DC1A002E802C /* GridDragView */,
+				296EBEEC21C8E87400F152EB /* CollectionViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		2926D5F121C8DC1A002E802C /* GridDragView */ = {
+			isa = PBXGroup;
+			children = (
+				2926D5F421C8E585002E802C /* GridDragView */,
+				2926D5F521C8E599002E802C /* GirdDragViewViewController.swift */,
+			);
+			path = GridDragView;
+			sourceTree = "<group>";
+		};
+		2926D5F421C8E585002E802C /* GridDragView */ = {
+			isa = PBXGroup;
+			children = (
+				2926D5F221C8DC30002E802C /* GridDragView.swift */,
+			);
+			path = GridDragView;
+			sourceTree = "<group>";
+		};
+		292EB0A521BE415600ED37E8 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				292EB0A821BE41A000ED37E8 /* Slider */,
+				292EB0A621BE418D00ED37E8 /* SliderViewController.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		292EB0A821BE41A000ED37E8 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				292EB0A921BE41B300ED37E8 /* BubbleSlider */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		292EB0A921BE41B300ED37E8 /* BubbleSlider */ = {
+			isa = PBXGroup;
+			children = (
+				292EB0AA21BE421800ED37E8 /* BubbleSlider */,
+				292EB0AD21BE42AC00ED37E8 /* BubbleSliderViewController.swift */,
+			);
+			path = BubbleSlider;
+			sourceTree = "<group>";
+		};
+		292EB0AA21BE421800ED37E8 /* BubbleSlider */ = {
+			isa = PBXGroup;
+			children = (
+				292EB0AF21BE5F9D00ED37E8 /* SSBubbleSlider.swift */,
+				292EB0AB21BE429100ED37E8 /* SSBubbleSliderAccessory.swift */,
+			);
+			path = BubbleSlider;
+			sourceTree = "<group>";
+		};
+		29304B8B21D4E2860033F2C7 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				29304B8C21D4E2950033F2C7 /* Sort.swift */,
+				29304B8E21E0B96D0033F2C7 /* Tree.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
 		2936F49521ABC8AE00F69917 /* CheckBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +515,12 @@
 		295F211F219FB08D006391D1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				29304B8B21D4E2860033F2C7 /* Algorithm */,
+				29C5C75E21D37D8400854848 /* Limiter */,
+				2926D5F021C8DBF1002E802C /* CollectionView */,
+				2926D5D721C11F12002E802C /* Queue */,
+				292EB0A521BE415600ED37E8 /* Slider */,
+				2982922421BE101400CB16A4 /* Switch */,
 				29D37DDA21B695CB00F4E87C /* TextField */,
 				2936F4C721B5348B00F69917 /* Progress */,
 				2936F4C421B50E6E00F69917 /* TableViewCell */,
@@ -496,6 +628,7 @@
 		295F217F21A7CBD2006391D1 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				29C5C75721D3664100854848 /* CircularSwipe */,
 				2936F49821ABDC6500F69917 /* PictureSwipe */,
 				295F217A21A6AF95006391D1 /* SloppySwipe */,
 				295F218021A7CBE9006391D1 /* TransitionViewController.swift */,
@@ -503,6 +636,8 @@
 				295F218421A7CCF9006391D1 /* SloppySwipeVC2.swift */,
 				2936F49921ABDF1200F69917 /* PictureSwipeVC1.swift */,
 				2936F49B21ABE3BC00F69917 /* PictureSwipeVC2.swift */,
+				29C5C75A21D369B900854848 /* CircularSwipeVC1.swift */,
+				29C5C75C21D369D800854848 /* CircularSwipeVC2.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -543,6 +678,23 @@
 				2936F49621ABC8D500F69917 /* CheckBoxViewController.swift */,
 			);
 			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		2982922421BE101400CB16A4 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				2982922821BE107200CB16A4 /* FlashSwitch */,
+				292EB0A221BE3C1B00ED37E8 /* SwitchViewController.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		2982922821BE107200CB16A4 /* FlashSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				2982922921BE10A500CB16A4 /* SSFlashSwitch.swift */,
+			);
+			path = FlashSwitch;
 			sourceTree = "<group>";
 		};
 		2987B4FA2187DEA100ACCD03 = {
@@ -633,8 +785,25 @@
 				29E166ED219E6B6300B0CC60 /* BitManager.swift */,
 				295F213321A0115A006391D1 /* Scheduler.swift */,
 				29D37DE221B7830D00F4E87C /* Then.swift */,
+				2926D5DA21C7AAB2002E802C /* Utils.swift */,
 			);
 			path = SSKit;
+			sourceTree = "<group>";
+		};
+		29C5C75721D3664100854848 /* CircularSwipe */ = {
+			isa = PBXGroup;
+			children = (
+				29C5C75821D3668400854848 /* SSCircularSwipe.swift */,
+			);
+			path = CircularSwipe;
+			sourceTree = "<group>";
+		};
+		29C5C75E21D37D8400854848 /* Limiter */ = {
+			isa = PBXGroup;
+			children = (
+				29C5C75F21D37DA600854848 /* Limiter.swift */,
+			);
+			path = Limiter;
 			sourceTree = "<group>";
 		};
 		29D37DDA21B695CB00F4E87C /* TextField */ = {
@@ -791,6 +960,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2926D5EA21C89E97002E802C /* PersistanceQueue.storyboard in Resources */,
 				2987B5112187DEA100ACCD03 /* LaunchScreen.storyboard in Resources */,
 				2987B50E2187DEA100ACCD03 /* Assets.xcassets in Resources */,
 				2987B50C2187DEA100ACCD03 /* Main.storyboard in Resources */,
@@ -866,8 +1036,10 @@
 				295F218B21A8E7C5006391D1 /* PopButtonViewController.swift in Sources */,
 				295F2126219FBCF5006391D1 /* SSPhotoAlbumModel.swift in Sources */,
 				295F216E21A265E6006391D1 /* SSDragBadgeView.swift in Sources */,
+				29304B8F21E0B96D0033F2C7 /* Tree.swift in Sources */,
 				29E166E2219D5E1F00B0CC60 /* UIDevice+Extension.swift in Sources */,
 				2987B5362187DF1200ACCD03 /* UIView+Extension.swift in Sources */,
+				292EB0A721BE418D00ED37E8 /* SliderViewController.swift in Sources */,
 				29BE0F9021953C2A00572E37 /* UIResponder+Extension.swift in Sources */,
 				2987B5422187ED0F00ACCD03 /* DispatchQueue+Extension.swift in Sources */,
 				295F216B21A2616E006391D1 /* PRTweenTimingFunctions.m in Sources */,
@@ -877,7 +1049,10 @@
 				295F211E219FABC6006391D1 /* SSCalendarView.swift in Sources */,
 				295F2131219FEFFA006391D1 /* SSImagePickerController.swift in Sources */,
 				2979A66E21B93A9E00F9E110 /* TextFieldViewController.swift in Sources */,
+				29C5C75D21D369D800854848 /* CircularSwipeVC2.swift in Sources */,
+				29C5C75B21D369B900854848 /* CircularSwipeVC1.swift in Sources */,
 				2936F4C321B5052A00F69917 /* RippleButtonViewController.swift in Sources */,
+				2926D5F621C8E599002E802C /* GirdDragViewViewController.swift in Sources */,
 				29BE0F8C2194463800572E37 /* Timer+Extension.swift in Sources */,
 				29E166E8219E47DF00B0CC60 /* Array+Extension.swift in Sources */,
 				2987B5092187DEA100ACCD03 /* ViewController.swift in Sources */,
@@ -898,6 +1073,7 @@
 				29BE0F822192E4E900572E37 /* URL+Extension.swift in Sources */,
 				29E166F5219EB1A500B0CC60 /* SSCalendarScrollView.swift in Sources */,
 				295F217E21A7A1CE006391D1 /* SSSloppySwiper.swift in Sources */,
+				2926D5F321C8DC30002E802C /* GridDragView.swift in Sources */,
 				2936F4D621B6568900F69917 /* ProgressViewController.swift in Sources */,
 				295F2128219FBE1F006391D1 /* SSPhotoAlbumCache.swift in Sources */,
 				2936F4CF21B5398D00F69917 /* SSProgressCircularLayer.swift in Sources */,
@@ -905,22 +1081,28 @@
 				295F217021A2AE25006391D1 /* DragBadgeViewController.swift in Sources */,
 				2936F4BF21B4C0BE00F69917 /* SSRippleLayer.swift in Sources */,
 				295F214021A01F3E006391D1 /* SwipeableViewManager.swift in Sources */,
+				29C5C76021D37DA600854848 /* Limiter.swift in Sources */,
 				2936F4B021B2624E00F69917 /* SSFireworks.swift in Sources */,
 				2936F49E21ABEA3900F69917 /* SSPictureSwiper.swift in Sources */,
 				295F218E21A92F05006391D1 /* ButtonViewController.swift in Sources */,
 				29BE0F862192F23A00572E37 /* Date+Extension.swift in Sources */,
 				295F212C219FC94D006391D1 /* SSPhotoCell.swift in Sources */,
+				29304B8D21D4E2950033F2C7 /* Sort.swift in Sources */,
 				29D37DDF21B6979900F4E87C /* AutoResizeTextView.swift in Sources */,
 				29BE0F96219665FE00572E37 /* UIButton+Extension.swift in Sources */,
+				292EB0AE21BE42AC00ED37E8 /* BubbleSliderViewController.swift in Sources */,
 				29D37DE321B7830D00F4E87C /* Then.swift in Sources */,
 				295F218521A7CCF9006391D1 /* SloppySwipeVC2.swift in Sources */,
 				29E166EE219E6B6300B0CC60 /* BitManager.swift in Sources */,
 				295F213E21A01F3E006391D1 /* SwipeableView.swift in Sources */,
 				2987B53A2187E19500ACCD03 /* String+Extension.swift in Sources */,
 				295F216A21A2616E006391D1 /* PRTween.m in Sources */,
+				292EB0B021BE5F9D00ED37E8 /* SSBubbleSlider.swift in Sources */,
 				295F218321A7CCE2006391D1 /* SloppySwipeVC1.swift in Sources */,
 				295F215D21A23F02006391D1 /* SwipeCardView.swift in Sources */,
 				295F216121A2547A006391D1 /* SC3ViewController.swift in Sources */,
+				2926D5D921C1207E002E802C /* PersistanceQueue.swift in Sources */,
+				292EB0AC21BE429100ED37E8 /* SSBubbleSliderAccessory.swift in Sources */,
 				295F213421A0115A006391D1 /* Scheduler.swift in Sources */,
 				29BE0F9421959BFE00572E37 /* UIScrollView+Extension.swift in Sources */,
 				29E166F1219EA95F00B0CC60 /* SSCalendarModel.swift in Sources */,
@@ -935,8 +1117,14 @@
 				2987B5382187E13D00ACCD03 /* UIColor+Extension.swift in Sources */,
 				2936F4A621B25F7D00F69917 /* EmitterAnimationViewController.swift in Sources */,
 				29D37DE121B776F600F4E87C /* TextSuggestView.swift in Sources */,
+				29C5C75921D3668400854848 /* SSCircularSwipe.swift in Sources */,
 				2987B5402187EA4300ACCD03 /* Data+Extension.swift in Sources */,
+				292EB0A321BE3C1B00ED37E8 /* SwitchViewController.swift in Sources */,
 				2936F4B421B273DF00F69917 /* SSLiquidButton.swift in Sources */,
+				2926D5EF21C89ECB002E802C /* PersistanceQueueViewController.swift in Sources */,
+				296EBEED21C8E87400F152EB /* CollectionViewController.swift in Sources */,
+				2982922A21BE10A500CB16A4 /* SSFlashSwitch.swift in Sources */,
+				2926D5DB21C7AAB2002E802C /* Utils.swift in Sources */,
 				2936F4BC21B4C04000F69917 /* SSRippleButton.swift in Sources */,
 				2936F49A21ABDF1200F69917 /* PictureSwipeVC1.swift in Sources */,
 				2936F4CD21B538A400F69917 /* SSProgress.swift in Sources */,

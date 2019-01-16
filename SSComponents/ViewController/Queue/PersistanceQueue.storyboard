@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XVO-0D-THT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PersistanceQueue-->
+        <scene sceneID="aBC-nk-laO">
+            <objects>
+                <viewController title="PersistanceQueue" id="XVO-0D-THT" customClass="PersistanceQueueViewController" customModule="SSComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="il5-CL-hsG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZDC-jC-SmC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggc-2A-YoN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-41-HHs">
+                                <rect key="frame" x="0.0" y="21" width="375" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="aqI-uy-dyk"/>
+                                </constraints>
+                            </progressView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-sL-IUc">
+                                <rect key="frame" x="0.0" y="23" width="375" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0So-sS-87C">
+                                    <size key="itemSize" width="300" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TaskCell" id="zFy-Lk-kjh" customClass="TaskCell" customModule="SSComponents" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onT-Hj-YX9">
+                                                    <rect key="frame" x="174" y="8" width="116" height="30"/>
+                                                    <color key="backgroundColor" red="0.67450982329999998" green="0.25490197539999998" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Fail">
+                                                        <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="failTapped:" destination="zFy-Lk-kjh" eventType="touchUpInside" id="scu-dJ-UVa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iej-JJ-MNf">
+                                                    <rect key="frame" x="50" y="8" width="116" height="30"/>
+                                                    <color key="backgroundColor" red="0.5647059083" green="0.66274511810000003" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" priority="250" constant="1000" id="9gy-hv-TQt"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Succeed">
+                                                        <color key="titleColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="succeedTapped:" destination="zFy-Lk-kjh" eventType="touchUpInside" id="rlM-b1-x5l"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ora-dL-aSX">
+                                                    <rect key="frame" x="8" y="17" width="34" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="onT-Hj-YX9" firstAttribute="width" secondItem="iej-JJ-MNf" secondAttribute="width" id="152-x0-l3f"/>
+                                            <constraint firstAttribute="centerY" secondItem="ora-dL-aSX" secondAttribute="centerY" id="1gh-Ky-6hf"/>
+                                            <constraint firstItem="ora-dL-aSX" firstAttribute="leading" secondItem="zFy-Lk-kjh" secondAttribute="leadingMargin" id="8my-Kl-iD1"/>
+                                            <constraint firstItem="iej-JJ-MNf" firstAttribute="centerY" secondItem="ora-dL-aSX" secondAttribute="centerY" constant="-2.25" id="94n-Ra-h6f"/>
+                                            <constraint firstAttribute="trailing" secondItem="onT-Hj-YX9" secondAttribute="trailing" constant="10" id="9My-mb-eGG"/>
+                                            <constraint firstItem="ora-dL-aSX" firstAttribute="centerY" secondItem="onT-Hj-YX9" secondAttribute="centerY" constant="2.25" id="V6H-PR-cv4"/>
+                                            <constraint firstItem="iej-JJ-MNf" firstAttribute="leading" secondItem="ora-dL-aSX" secondAttribute="trailing" constant="8" id="mKb-C9-2dX"/>
+                                            <constraint firstItem="onT-Hj-YX9" firstAttribute="leading" secondItem="iej-JJ-MNf" secondAttribute="trailing" constant="8" id="zUv-b3-oKD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="failButton" destination="onT-Hj-YX9" id="0HO-oq-OIi"/>
+                                            <outlet property="nameLabel" destination="ora-dL-aSX" id="Re2-3B-YtV"/>
+                                            <outlet property="succeedButton" destination="iej-JJ-MNf" id="RZF-IN-ZhY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="XVO-0D-THT" id="yPd-D6-WmM"/>
+                                    <outlet property="delegate" destination="XVO-0D-THT" id="2gD-s8-qJe"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXr-NC-2C5">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Add" id="D6F-lF-e8V">
+                                        <connections>
+                                            <action selector="addTapped:" destination="XVO-0D-THT" id="5cu-lb-p9A"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Remove" id="6tw-8C-Tsk">
+                                        <connections>
+                                            <action selector="removeTapped:" destination="XVO-0D-THT" id="W3x-Fg-eAz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bzd-JH-XzH"/>
+                                    <barButtonItem title="Settings" id="NAw-mY-HvD"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wXr-NC-2C5" firstAttribute="top" secondItem="9Zo-sL-IUc" secondAttribute="bottom" id="38N-6w-3fo"/>
+                            <constraint firstItem="ZDC-jC-SmC" firstAttribute="top" secondItem="wXr-NC-2C5" secondAttribute="bottom" id="59M-id-d6g"/>
+                            <constraint firstItem="9Zo-sL-IUc" firstAttribute="top" secondItem="6h9-41-HHs" secondAttribute="bottom" id="5tp-nm-4FX"/>
+                            <constraint firstItem="6h9-41-HHs" firstAttribute="leading" secondItem="ggc-2A-YoN" secondAttribute="leading" id="Dsk-Vr-eEu"/>
+                            <constraint firstItem="wXr-NC-2C5" firstAttribute="leading" secondItem="ggc-2A-YoN" secondAttribute="leading" id="IEb-kf-AvQ"/>
+                            <constraint firstItem="9Zo-sL-IUc" firstAttribute="leading" secondItem="ggc-2A-YoN" secondAttribute="leading" id="WQO-uD-wI3"/>
+                            <constraint firstItem="9Zo-sL-IUc" firstAttribute="top" secondItem="il5-CL-hsG" secondAttribute="bottom" id="Zuu-xu-paM"/>
+                            <constraint firstAttribute="trailing" secondItem="wXr-NC-2C5" secondAttribute="trailing" id="dep-Dr-XwH"/>
+                            <constraint firstItem="6h9-41-HHs" firstAttribute="top" secondItem="il5-CL-hsG" secondAttribute="bottom" constant="1" id="ftu-aC-ffe"/>
+                            <constraint firstAttribute="trailing" secondItem="9Zo-sL-IUc" secondAttribute="trailing" id="koT-V4-67a"/>
+                            <constraint firstAttribute="trailing" secondItem="6h9-41-HHs" secondAttribute="trailing" id="q1I-gB-jkN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mmm-Za-T9O"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Zuu-xu-paM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZMQ-be-hJV"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9Zo-sL-IUc" id="Sp0-uu-Snp"/>
+                        <outlet property="progressView" destination="6h9-41-HHs" id="J0k-s0-SaT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAC-3L-o0c" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+</document>

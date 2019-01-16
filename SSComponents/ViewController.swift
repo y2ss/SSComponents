@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private var tableView: UITableView!
-    private var textfield: UITextField!
-    private let dataSource = [
+    @objc dynamic private var tableView: UITableView!
+    @objc dynamic private var textfield: UITextField!
+    @objc dynamic private let dataSource = [
         "Calendar",
         "SwipeCard",
         "DragBadge",
@@ -21,17 +21,57 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         "EmitterAnimation",
         "Progress",
         "TextField",
+        "Switch",
+        "Slider",
+        "CollectionView",
+        "Queue",
         "ImagePicker",
     ]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView = UITableView()
-        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(RippleTableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.view.addSubview(tableView)
+//        super.viewDidLoad()
+//        tableView = UITableView()
+//        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.register(RippleTableViewCell.self, forCellReuseIdentifier: "Cell")
+//        self.view.addSubview(tableView)
+        
+        var tree = AVLTree<Int>()
+        tree.insert(15)
+        tree.insert(12)
+        tree.insert(9)
+        tree.insert(24)
+        tree.insert(4)
+        tree.insert(5)
+        tree.insert(16)
+        tree.insert(11)
+        tree.insert(17)
+        tree.insert(0)
+        tree.insert(4)
+        tree.insert(19)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(12)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(24)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(0)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(16)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(11)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(17)
+        tree.inOrder(tree.root!)
+        print("-----")
+        tree.remove(9)
+        tree.inOrder(tree.root!)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,31 +89,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch indexPath.row {
         case 0:
             self.navigationController?.pushViewController(CalendarViewController(), animated: true)
-            break
         case 1:
             self.navigationController?.pushViewController(SwipeCardViewController(), animated: true)
-            break
         case 2:
             self.navigationController?.pushViewController(DragBadgeViewController(), animated: true)
-            break
         case 3:
             self.navigationController?.present(TransitionViewController(), animated: true, completion: nil)
-            break
         case 4:
             self.navigationController?.pushViewController(ButtonViewController(), animated: true)
-            break
         case 5:
             self.navigationController?.pushViewController(EmitterAnimationViewController(), animated: true)
-            break
         case 6:
             self.navigationController?.pushViewController(ProgressViewController(), animated: true)
-            break
         case 7:
             self.navigationController?.pushViewController(TextFieldViewController(), animated: true)
-            break
         case 8:
+            self.navigationController?.pushViewController(SwitchViewController(), animated: true)
+        case 9:
+            self.navigationController?.pushViewController(SliderViewController(), animated: true)
+        case 10:
+            self.navigationController?.pushViewController(CollectionViewController(), animated: true)
+        case 11:
+            let vc = UIStoryboard.init(name: "PersistanceQueue", bundle: nil).instantiateInitialViewController()!
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 12:
             self.navigationController?.present(SSImagePickerController(), animated: true, completion: nil)
-            break
         default:
             break
         }

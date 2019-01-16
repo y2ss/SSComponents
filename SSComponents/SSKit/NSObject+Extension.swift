@@ -28,5 +28,29 @@ extension NSObject {
         return false
     }
     
+    func dictForViews(_ views: [UIView], anyClass: AnyClass = NSObject.self) -> [String: UIView] {
+        var count: UInt32 = 0
+        var dicts: [String: UIView] = [:]
+        if let ivars = class_copyIvarList(self.classForCoder, &count) {
+            for i in 0 ..< Int(count) {
+                if let c = ivar_getTypeEncoding(ivars[i]) {
+                    let type = String.init(cString: c)
+                    print(type)
+                    //crash: 传ivars[i]是struct、元组、等
+                    if let obj = object_getIvar(self, ivars[i]) as? UIView {
+                        if views.contains(obj) {
+                            if let cString = ivar_getName(ivars[i]) {
+                                let name = String(cString: cString)
+                                dicts[name] = obj
+                                if dicts.count == views.count { break }
+                            }
+                        }
+                    }
+                }
+            }
+            free(ivars)
+        }
+        return dicts
+    }
     
 }

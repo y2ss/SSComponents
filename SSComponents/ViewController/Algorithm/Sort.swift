@@ -94,7 +94,6 @@ struct Sort {
     }
     
     private static func merge<T>(_ arr: inout [T], left: Int, right: Int, mid: Int, temp: inout [T]) where T: Comparable {
-        print("left:\(left) mid:\(mid) right:\(right)")
         var _left = left
         var i = _left
         var j = mid + 1

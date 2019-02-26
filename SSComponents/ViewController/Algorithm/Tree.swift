@@ -14,15 +14,29 @@ class Node<Value: Comparable>: Equatable {
     var right: Node?
     var parent: Node?
     var height: Int
-    init(key: Value, left: Node? = nil, right: Node? = nil, parent: Node? = nil, height: Int = 0) {
+    var color: Int//0red 1black
+    init(key: Value, left: Node? = nil, right: Node? = nil, parent: Node? = nil, height: Int = 0, color: Int = 1) {
         self.key = key
         self.left = left
         self.right = right
         self.parent = parent
         self.height = height
+        self.color = color
     }
     static func == (lhs: Node, rhs: Node) -> Bool {
         return lhs.key == rhs.key
+    }
+    var isRed: Bool {
+        return color == 0
+    }
+    var isBlack: Bool {
+        return color == 1
+    }
+    func setRed() {
+        color = 0
+    }
+    func setBlack() {
+        color = 1
     }
 }
 
@@ -359,6 +373,364 @@ struct AVLTree<Value: Comparable>: Tree {//平衡二叉树
 }
 
 
-struct RBTree<Value: Comparable> {//红黑树
+struct RBTree<Value: Comparable>: Tree {//红黑树
+    typealias ValueType = Value
+    var root: Node<Value>?
+
+    @discardableResult mutating func insert(_ node: Node<Value>) -> Node<Value>? {
+        _insert(&root, node: node)
+        return root
+    }
+    
+    @discardableResult mutating func remove(_ key: Value) -> Node<Value>? {
+        if let node = search(root, key: key) {
+            _delete(&root, vnode: node)
+        }
+        return root
+    }
+    
+    mutating func destory() {
+        root = nil
+    }
+    
+    private func leftRotate(_ root: inout Node<Value>?, x: inout Node<Value>?)  {
+        let y = x?.right
+        x?.right = y?.left
+        if y?.left != nil {
+            y?.left?.parent = x
+        }
+        y?.parent = x?.parent
+        if x?.parent == nil {
+            root = y
+        } else {
+            if x?.parent?.left == x {
+                x?.parent?.left = y
+            } else {
+                x?.parent?.right = y
+            }
+            y?.left = x
+            x?.parent = y
+        }
+    }
+    
+    private func rightRotate(_ root: inout Node<Value>?, y: inout Node<Value>?) {
+        let x = y?.left
+        y?.left = x?.right
+        x?.right?.parent = y
+        x?.parent = y?.parent
+        if y?.parent == nil {
+            root = x
+        } else {
+            if y == y?.parent?.right {
+                y?.parent?.right = x
+            } else {
+                y?.parent?.left = x
+            }
+        }
+        x?.right = y
+        y?.parent = x
+    }
+    
+    private func _delete(_ root: inout Node<Value>?, vnode: Node<Value>) {
+        var child, parent: Node<Value>?
+        var color: Int?
+        let node = vnode
+        if node.left != nil && node.right != nil {
+            var replace: Node<Value>? = node
+            replace = replace?.right
+            while replace?.left != nil {
+                replace = replace?.left
+            }
+            if node.parent != nil {
+                if node.parent?.left == node {
+                    node.parent?.left = replace
+                } else {
+                    node.parent?.right = replace
+                }
+            } else {
+                root = replace
+            }
+            child = replace?.right
+            parent = replace?.parent
+            color = replace?.color
+            if parent == node {
+                parent = replace
+            } else {
+                if child != nil {
+                    child?.parent = parent
+                }
+                parent?.left = child
+                replace?.right = node.right
+                node.right?.parent = replace
+            }
+            replace?.parent = node.parent
+            replace?.color = node.color
+            replace?.left = node.left
+            node.left?.parent = replace
+            if color == 1 {//black
+                _delete_fixup(&root, node: &child, parent: &parent)
+                //node = nil
+                return
+            }
+        }
+        if node.left != nil {
+            child = node.left
+        } else {
+            child = node.right
+        }
+        parent = node.parent
+        color = node.color
+        if child != nil {
+            child?.parent = parent
+        }
+        if parent != nil {
+            if parent?.left == node {
+                parent?.left = child
+            } else {
+                parent?.right = child
+            }
+        } else {
+            root = child
+        }
+        if color == 1 {//black
+            _delete_fixup(&root, node: &child, parent: &parent)
+            //node = nil
+        }
+    }
+    
+    private func _delete_fixup(_ root: inout Node<Value>?, node: inout Node<Value>?, parent: inout Node<Value>?) {
+        var other: Node<Value>?
+        while (node == nil || node!.isBlack) && node != root {
+            if parent?.left == node {
+                other = parent?.right
+                if other != nil && other!.isRed {
+                    other?.setBlack()
+                    parent?.setRed()
+                    leftRotate(&root, x: &parent)
+                    other = parent?.right
+                }
+                if (other == nil || other!.left == nil || other!.left!.isBlack) && (other == nil || other!.right == nil || other!.right!.isBlack) {
+                    other?.setRed()
+                    node = parent
+                    parent = node?.parent
+                } else {
+                    if other == nil || other!.right == nil || other!.right!.isBlack {
+                        other?.left?.setBlack()
+                        other?.setRed()
+                        rightRotate(&root, y: &other)
+                        other = parent?.right
+                    }
+                    other?.color = parent!.color
+                    parent?.setBlack()
+                    other?.right?.setBlack()
+                    leftRotate(&root, x: &parent)
+                    node = root
+                    break
+                }
+            } else {
+                other = parent?.left
+                if other != nil && other!.isRed {
+                    other?.setBlack()
+                    parent?.setRed()
+                    rightRotate(&root, y: &parent)
+                    other = parent?.left
+                }
+                if (other == nil || other!.left == nil || other!.left!.isBlack) && (other == nil || other!.right == nil || other!.right!.isBlack) {
+                    other?.setRed()
+                    node = parent
+                    parent = node?.parent
+                } else {
+                    if other == nil || other!.left == nil || other!.left!.isBlack  {
+                        other?.right?.setBlack()
+                        other?.setRed()
+                        leftRotate(&root, x: &other)
+                        other = parent?.left
+                    }
+                    other?.color = parent!.color
+                    parent?.setBlack()
+                    other?.left?.setBlack()
+                    rightRotate(&root, y: &parent)
+                    node = root
+                    break
+                }
+            }
+        }
+        if node != nil {
+            node?.setBlack()
+        }
+    }
+    
+    private func _insert(_ root: inout Node<Value>?, node: Node<Value>) {
+        var y: Node<Value>?
+        var x = root
+        while x != nil {
+            y = x
+            if node.key < x!.key {
+                x = x?.left
+            } else {
+                x = x?.right
+            }
+        }
+        node.parent = y
+        if y != nil {
+            if node.key < y!.key {
+                y?.left = node
+            } else {
+                y?.right = node
+            }
+        } else {
+            root = node
+        }
+        node.setRed()
+        _insert_fixup(&root, vnode: node)
+    }
+    
+    private func _insert_fixup(_ root: inout Node<Value>?, vnode: Node<Value>?) {
+        var parent, gparent: Node<Value>?
+        var node = vnode
+        parent = node?.parent
+        while parent != nil && parent!.isRed {//父节点存在，并且父节点的颜色是红色
+            gparent = parent!.parent
+            //若“父节点”是“祖父节点的左孩子”
+            if parent == gparent?.left {
+                let uncle = gparent?.right
+                if uncle != nil && uncle!.isRed {//叔叔节点是红色
+                    uncle?.setBlack()
+                    parent?.setBlack()
+                    gparent?.setRed()
+                    node = gparent
+                    parent = node?.parent
+                    continue
+                }
+                if parent?.right == node {//当前节点在父节点的右边
+                    leftRotate(&root, x: &parent)
+                    let tmp = parent
+                    parent = node
+                    node = tmp
+                }
+                parent?.setBlack()
+                gparent?.setRed()
+                rightRotate(&root, y: &gparent)
+            } else { //若“父节点”是“祖父节点的右孩子”
+                let uncle = gparent?.left
+                if uncle != nil && uncle!.isRed {
+                    uncle?.setBlack()
+                    parent?.setBlack()
+                    gparent?.setRed()
+                    node = gparent
+                    parent = node?.parent
+                    continue
+                }
+                if parent?.left == node {
+                    rightRotate(&root, y: &parent)
+                    let tmp = parent
+                    parent = node
+                    node = tmp
+                }
+                parent?.setBlack()
+                gparent?.setRed()
+                leftRotate(&root, x: &gparent)
+            }
+            parent = node?.parent
+        }
+        root?.setBlack()
+    }
+}
+
+
+struct SplayTree<Value: Comparable>: Tree {//伸展树
+    typealias ValueType = Value
+    var root: Node<Value>?
+    
+    @discardableResult mutating func insert(_ key: Value) -> Node<Value>? {
+        let node = Node<Value>(key: key)
+        insert(node)
+        splay(&root, node: node)
+        return root
+    }
+    
+    @discardableResult mutating func insert(_ node: Node<Value>) -> Node<ValueType>? {
+        var y: Node<Value>? = nil
+        var x = root
+        while x != nil {//找到node的parent
+            guard let _x = x else { break }
+            y = _x
+            if node.key > _x.key {
+                x = _x.right
+            } else {
+                x = _x.left
+            }
+        }
+        if y == nil {
+            root = node
+        } else if (y?.key)! > node.key {
+            y?.left = node
+        } else {
+            y?.right = node
+        }
+        return root
+    }
+    
+    @discardableResult mutating func remove(_ key: Value) -> Node<Value>? {
+        if let node = search(root, key: key) {
+            var x: Node<Value>?
+            splay(&root, node: node)
+            if root?.left != nil {
+                splay(&root!.left, node: node)
+                x = root?.left
+                x?.right = root?.right
+            } else {
+                x = root?.right
+            }
+            root = x
+        }
+        return root
+    }
+    
+    mutating func destory() {
+        root = nil
+    }
+    
+    private func splay(_ root: inout Node<Value>?, node: Node<Value>) {
+        var n, l, r, c: Node<Value>?
+        n?.left = nil
+        n?.right = nil
+        l = n
+        r = n
+        if root == nil { return }
+        while true {
+            if node.key < root!.key {
+                if root?.left == nil { break }
+                if node.key < root!.left!.key {
+                    c = root?.left
+                    root?.left = c?.right
+                    c?.right = node
+                    root = c
+                    if root?.left == nil { break }
+                }
+                r?.left = root
+                r = root
+                root = root?.left
+            } else if node.key > root!.key {
+                if root?.right == nil { break }
+                if node.key > root!.right!.key {
+                    c = root?.right
+                    root?.right = c?.left
+                    c?.left = root
+                    root = c
+                    if root?.right == nil { break }
+                }
+                l?.right = root
+                l = root
+                root = root?.right
+            } else {
+                break
+            }
+        }
+        l?.right = root?.left
+        r?.left = root?.right
+        root?.left = n?.right
+        root?.right = n?.left
+    }
     
 }

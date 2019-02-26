@@ -29,49 +29,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     ]
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView = UITableView()
-//        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        tableView.register(RippleTableViewCell.self, forCellReuseIdentifier: "Cell")
-//        self.view.addSubview(tableView)
-        
-        var tree = AVLTree<Int>()
-        tree.insert(15)
-        tree.insert(12)
-        tree.insert(9)
-        tree.insert(24)
-        tree.insert(4)
-        tree.insert(5)
-        tree.insert(16)
-        tree.insert(11)
-        tree.insert(17)
-        tree.insert(0)
-        tree.insert(4)
-        tree.insert(19)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(12)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(24)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(0)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(16)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(11)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(17)
-        tree.inOrder(tree.root!)
-        print("-----")
-        tree.remove(9)
-        tree.inOrder(tree.root!)
+        super.viewDidLoad()
+        tableView = UITableView()
+        tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: UIScreen.height)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(RippleTableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.view.addSubview(tableView)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
